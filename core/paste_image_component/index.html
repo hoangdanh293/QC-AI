@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            overflow-x: hidden;
+        }
+        #paste-box {
+            border: 2px dashed #0071e3;
+            border-radius: 12px;
+            padding: 18px 15px;
+            text-align: center;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+            transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+            outline: none;
+            margin-bottom: 12px;
+        }
+        #paste-box:focus {
+            background-color: #e8f1fd;
+            border-color: #0077ed;
+        }
+        #paste-box:hover {
+            background-color: #e8f1fd;
+        }
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        .image-card {
+            position: relative;
+            background-color: #ffffff;
+            border: 1px solid rgba(60, 60, 67, 0.12);
+            border-radius: 12px;
+            padding: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            display: inline-block;
+            max-width: 100%;
+            transition: transform 0.15s ease;
+        }
+        .image-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .preview-img {
+            max-width: 100%;
+            max-height: 250px;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            display: block;
+        }
+        .clear-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            border: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.15s, transform 0.1s;
+            line-height: 1;
+            padding: 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            user-select: none;
+            z-index: 10;
+        }
+        .clear-btn:hover {
+            background: #ff3b30;
+            transform: scale(1.15);
+        }
+    </style>
+</head>
+<body>
+    <div id="paste-box" tabindex="0">
+        📋 Click vào đây & Nhấn <b>Ctrl + V</b> để dán ảnh (Có thể dán nhiều ảnh)
+    </div>
+    <div id="gallery" class="gallery-container"></div>
+
+    <script>
+        let images = [];
+
+        function sendToStreamlit(type, data) {
+            window.parent.postMessage({ isStreamlitMessage: true, type: type, ...data }, "*");
+        }
+        function setFrameHeight(h) {
+            sendToStreamlit("streamlit:setFrameHeight", { height: h });
+        }
+        function sendValue(value) {
+            sendToStreamlit("streamlit:setComponentValue", { value: value });
+        }
+        sendToStreamlit("streamlit:componentReady", { apiVersion: 1 });
+
+        const pasteBox = document.getElementById("paste-box");
+        const gallery = document.getElementById("gallery");
+
+        window.addEventListener("message", (event) => {
+            const msg = event.data;
+            if (!msg || !msg.type) return;
+            if (msg.type === "streamlit:render") {
+                if (msg.args && msg.args.value === null) {
+                    reset();
+                }
+            }
+        });
+
+        function reset() {
+            images = [];
+            renderGallery();
+            sendValue(null);
+            updateHeight();
+        }
+
+        function renderGallery() {
+            gallery.innerHTML = "";
+            images.forEach((img) => {
+                const card = document.createElement("div");
+                card.className = "image-card";
+                
+                const imageEl = document.createElement("img");
+                imageEl.className = "preview-img";
+                imageEl.src = img.fullDataUrl;
+                
+                const clearBtn = document.createElement("button");
+                clearBtn.className = "clear-btn";
+                clearBtn.title = "Xóa ảnh này";
+                clearBtn.innerHTML = "×";
+                clearBtn.addEventListener("click", () => {
+                    removeImage(img.id);
+                });
+                
+                card.appendChild(imageEl);
+                card.appendChild(clearBtn);
+                gallery.appendChild(card);
+            });
+        }
+
+        function removeImage(id) {
+            images = images.filter(img => img.id !== id);
+            updateImages();
+        }
+
+        function updateImages() {
+            renderGallery();
+            if (images.length === 0) {
+                sendValue({ cleared: true });
+            } else {
+                sendValue(images.map(img => ({
+                    name: img.name,
+                    type: img.type,
+                    data: img.data
+                })));
+            }
+            updateHeight();
+        }
+
+        // Listen on the document to allow pasting when clicking anywhere in the component
+        document.addEventListener("paste", function(e) {
+            const clipboardData = e.clipboardData || (e.originalEvent && e.originalEvent.clipboardData);
+            if (!clipboardData) return;
+            const items = clipboardData.items;
+            if (!items) return;
+
+            let pastedImage = false;
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].type.indexOf("image") !== -1) {
+                    const mimeType = items[i].type; // Capture synchronously before event loop ends
+                    const blob = items[i].getAsFile();
+                    if (!blob) continue;
+
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        const base64Data = event.target.result;
+                        const rawBase64 = base64Data.split(",")[1];
+                        
+                        const imgId = Date.now() + "_" + Math.floor(Math.random() * 10000);
+                        images.push({
+                            id: imgId,
+                            name: "pasted_image_" + imgId + ".png",
+                            type: mimeType,
+                            data: rawBase64,
+                            fullDataUrl: base64Data
+                        });
+                        
+                        updateImages();
+                    };
+                    reader.readAsDataURL(blob);
+                    pastedImage = true;
+                }
+            }
+            if (pastedImage) {
+                e.preventDefault();
+            }
+        });
+
+        // Focus the paste box on mount so pasting works immediately when clicking the iframe area
+        window.addEventListener("load", () => {
+            pasteBox.focus();
+        });
+
+        function updateHeight() {
+            setTimeout(() => {
+                const h = document.body.scrollHeight;
+                setFrameHeight(Math.max(h + 10, 80));
+            }, 50);
+        }
+
+        // Set up ResizeObserver to dynamically update height
+        const resizeObserver = new ResizeObserver(() => {
+            updateHeight();
+        });
+        resizeObserver.observe(document.body);
+    </script>
+</body>
+</html>

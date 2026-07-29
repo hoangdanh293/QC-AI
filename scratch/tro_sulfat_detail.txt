@@ -1,0 +1,18 @@
+{
+  "ten_hien_thi": "Tro sulfat",
+  "tu_dien_dich": "\"Sulfated ash\" BẮT BUỘC dịch là \"Tro sulfat\"",
+  "loai_khai_bao": "Chỉ tiêu",
+  "cap_do_phan_muc": 2,
+  "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Tro sulfat.",
+  "phuong_phap_ap_dung": [
+    "nung_1"
+  ],
+  "quy_tac_ngu_canh": {
+    "Dạy AI (Training)": "",
+    "COA": "",
+    "Dược điển": "Tìm chỉ tiêu \"Sulfated ash\" dịch là \"Tro sulfate\". Trích xuất nội dung của chỉ tiêu. Dịch song ngữ Việt - Anh",
+    "MOA": ""
+  },
+  "vi_du_mau": [],
+  "bang_di_kem": "bang_tro_sulfat"
+}

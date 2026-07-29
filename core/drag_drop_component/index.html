@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 8px;
+            background-color: transparent;
+            color: #1d1d1f;
+        }
+        .sortable-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-right: 4px;
+        }
+        .sortable-item {
+            background-color: #ffffff;
+            border: 1px solid rgba(60, 60, 67, 0.12);
+            border-left: 4px solid #0071e3;
+            border-radius: 10px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            cursor: default;
+            user-select: none;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            transition: box-shadow 0.15s, border-color 0.15s, opacity 0.15s;
+        }
+        .sortable-item:hover {
+            box-shadow: 0 4px 14px rgba(0,113,227,0.10);
+            border-color: rgba(0,113,227,0.35);
+        }
+        .sortable-item.dragging {
+            opacity: 0.35;
+            cursor: grabbing;
+            background-color: #f0f7ff;
+            border-style: dashed;
+            box-shadow: none;
+        }
+        .drag-over {
+            border-top: 3px solid #0071e3;
+        }
+        .handle {
+            color: #86868b;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            cursor: grab;
+            flex-shrink: 0;
+            padding-top: 4px;
+            user-select: none;
+        }
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            gap: 1px;
+            min-width: 0;
+        }
+        .card-header {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #86868b;
+            font-weight: 600;
+        }
+        .item-text {
+            font-size: 13px;
+            font-weight: 500;
+            color: #1d1d1f;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .sortable-list::-webkit-scrollbar { width: 5px; }
+        .sortable-list::-webkit-scrollbar-track { background: transparent; }
+        .sortable-list::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 10px; }
+        .sortable-list::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.25); }
+        .status-bar {
+            font-size: 11px;
+            color: #0071e3;
+            min-height: 16px;
+            margin-top: 6px;
+            font-weight: 500;
+            text-align: right;
+        }
+
+        /* SOP Library Card styles */
+        .card-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: 12px;
+        }
+        .card-title-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-grow: 1;
+            min-width: 0;
+        }
+        .card-title-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1d1d1f;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .card-id-text {
+            font-size: 13px;
+            color: #86868b;
+            font-weight: normal;
+            white-space: nowrap;
+        }
+        .card-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .action-btn {
+            border: 1px solid #d2d2d7;
+            background-color: #ffffff;
+            border-radius: 980px;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s ease-in-out;
+            color: #1d1d1f;
+            outline: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .action-btn:hover {
+            background-color: #f5f5f7;
+            border-color: #86868b;
+            transform: scale(0.98);
+        }
+        .delete-btn {
+            color: #ff3b30;
+            border-color: rgba(255, 59, 48, 0.25);
+        }
+        .delete-btn:hover {
+            background-color: #ff3b30;
+            color: #ffffff;
+            border-color: #ff3b30;
+        }
+        .edit-btn {
+            color: #0071e3;
+            border-color: rgba(0, 113, 227, 0.25);
+        }
+        .edit-btn:hover {
+            background-color: #0071e3;
+            color: #ffffff;
+            border-color: #0071e3;
+        }
+        .toggle-btn {
+            color: #515154;
+            border-color: #d2d2d7;
+        }
+        .toggle-btn:hover {
+            background-color: #e8e8ed;
+        }
+        .card-expanded-content {
+            margin-top: 12px;
+            border-top: 1px solid rgba(60, 60, 67, 0.08);
+            padding-top: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+        .kw-section, .content-section {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .section-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #86868b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .kw-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .kw-tag {
+            background-color: #f5f5f7;
+            border: 1px solid #d2d2d7;
+            border-radius: 6px;
+            padding: 3px 8px;
+            font-size: 11px;
+            color: #1d1d1f;
+            font-weight: 500;
+        }
+        .kw-none {
+            font-size: 12px;
+            color: #86868b;
+            font-style: italic;
+        }
+        .sop-content-pre {
+            background-color: #f5f5f7;
+            border: 1px solid #d2d2d7;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-family: inherit;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #1d1d1f;
+            white-space: pre-wrap;
+            margin: 0;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        /* Method Library specific styles */
+        .method-split-row {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+        }
+        .method-split-row > .kw-section {
+            flex: 1;
+            min-width: 0;
+        }
+        .ex-tag {
+            background-color: #fff3cd !important;
+            border-color: #ffeba8 !important;
+            color: #856404 !important;
+        }
+        .tags-container {
+            background-color: #f5f5f7;
+            border: 1px solid #d2d2d7;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .tag-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tag-row code {
+            background-color: #e8e8ed;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+            color: #1d1d1f;
+        }
+        .tag-desc {
+            color: #515154;
+        }
+    </style>
+</head>
+<body>
+    <ul class="sortable-list" id="list"></ul>
+    <div class="status-bar" id="status"></div>
+
+    <script>
+        // ---------- Streamlit messaging ----------
+        function sendToStreamlit(type, data) {
+            window.parent.postMessage({ isStreamlitMessage: true, type: type, ...data }, "*");
+        }
+        function setFrameHeight() {
+            const h = document.getElementById("list").scrollHeight + document.getElementById("status").offsetHeight + 24;
+            sendToStreamlit("streamlit:setFrameHeight", { height: h });
+        }
+        function sendValue(value) {
+            sendToStreamlit("streamlit:setComponentValue", { value: value });
+        }
+        // Signal ready so Streamlit sends the first render
+        sendToStreamlit("streamlit:componentReady", { apiVersion: 1 });
+
+        // ---------- State ----------
+        let items = [];
+        let dragEl = null;
+        let dragOverEl = null;
+        let canDrag = false;
+        const list = document.getElementById("list");
+        const status = document.getElementById("status");
+
+        // Global mouse/touch release handlers to safely reset drag flag
+        window.addEventListener("mouseup", () => { canDrag = false; });
+        window.addEventListener("touchend", () => { canDrag = false; });
+
+        // ---------- Receive messages from Streamlit ----------
+        let disableDrag = false;
+        window.addEventListener("message", (event) => {
+            const msg = event.data;
+            if (!msg || !msg.type) return;
+            if (msg.type === "streamlit:render") {
+                const newItems = msg.args.items || [];
+                const newDisableDrag = msg.args.disable_drag || false;
+                // Only re-render if the list actually changed from outside or drag state changed
+                if (JSON.stringify(items) !== JSON.stringify(newItems) || disableDrag !== newDisableDrag) {
+                    items = [...newItems];
+                    disableDrag = newDisableDrag;
+                    renderList();
+                }
+            }
+        });
+
+        // ---------- Render ----------
+        function renderList() {
+            list.innerHTML = "";
+            items.forEach((item, index) => {
+                const li = document.createElement("li");
+                li.className = "sortable-item";
+                li.draggable = !disableDrag;
+                li.dataset.index = index;
+
+                const handleHtml = disableDrag 
+                    ? `<div class="handle" style="opacity: 0.15; cursor: not-allowed;" title="Đang tìm kiếm - Không thể kéo sắp xếp">⋮⋮</div>`
+                    : `<div class="handle" title="Kéo để sắp xếp">⋮⋮</div>`;
+
+                if (typeof item === 'string') {
+                    // String mode (Original simple criteria list)
+                    li.dataset.id = item;
+                    li.innerHTML = `
+                        ${handleHtml}
+                        <div class="card-content">
+                            <div class="card-header" id="hdr-${index}">Chỉ tiêu #${index + 1}</div>
+                            <div class="item-text" title="${escapeHtml(item)}">${escapeHtml(item)}</div>
+                        </div>
+                    `;
+                } else if (item.type === 'method') {
+                    // Method Library mode
+                    li.dataset.id = item.id;
+                    const inKwsHtml = item.tu_khoa_nhan_dien && item.tu_khoa_nhan_dien.length > 0 
+                        ? item.tu_khoa_nhan_dien.map(kw => `<span class="kw-tag">${escapeHtml(kw)}</span>`).join('') 
+                        : '<span class="kw-none">Không có</span>';
+                    const exKwsHtml = item.tu_khoa_loai_tru && item.tu_khoa_loai_tru.length > 0 
+                        ? item.tu_khoa_loai_tru.map(kw => `<span class="kw-tag ex-tag">${escapeHtml(kw)}</span>`).join('') 
+                        : '<span class="kw-none">Không có</span>';
+                    
+                    let tagsHtml = '';
+                    if (item.cau_truc_dau_ra) {
+                        for (const [tagKey, tagDesc] of Object.entries(item.cau_truc_dau_ra)) {
+                            tagsHtml += `
+                                <div class="tag-row" style="margin-bottom: 4px;">
+                                    <code>{{ ${escapeHtml(item.id)}.${escapeHtml(tagKey)} }}</code> &rarr; 
+                                    <span class="tag-desc">${escapeHtml(tagDesc)}</span>
+                                </div>
+                            `;
+                        }
+                    }
+                    if (!tagsHtml) tagsHtml = '<div class="kw-none">Chưa cấu hình thuộc tính</div>';
+
+                    li.innerHTML = `
+                        ${handleHtml}
+                        <div class="card-content">
+                            <div class="card-top-row">
+                                <div class="card-title-group">
+                                    <span class="card-title-text" title="${escapeHtml(item.ten_phuong_phap)}">🔹 ${escapeHtml(item.ten_phuong_phap || 'Chưa có tên')}</span>
+                                    <span class="card-id-text">(${escapeHtml(item.id)})</span>
+                                </div>
+                                <div class="card-actions">
+                                    <button class="action-btn edit-btn" data-id="${escapeHtml(item.id)}">✏️ Sửa</button>
+                                    <button class="action-btn delete-btn" data-id="${escapeHtml(item.id)}">🗑️ Xóa</button>
+                                    <button class="action-btn toggle-btn" data-index="${index}">👁️ Chi tiết</button>
+                                </div>
+                            </div>
+                            <div class="card-expanded-content" id="expanded-${index}" style="display: none;">
+                                <div class="method-split-row">
+                                    <div class="kw-section">
+                                        <div class="section-label">Từ khóa nhận diện:</div>
+                                        <div class="kw-list">${inKwsHtml}</div>
+                                    </div>
+                                    <div class="kw-section">
+                                        <div class="section-label">Từ khóa loại trừ:</div>
+                                        <div class="kw-list">${exKwsHtml}</div>
+                                    </div>
+                                </div>
+                                <div class="content-section">
+                                    <div class="section-label">Cấu trúc đầu ra (Các Tag biến số):</div>
+                                    <div class="tags-container">${tagsHtml}</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    // Attach handlers for buttons
+                    li.querySelector('.edit-btn').addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const id = e.target.dataset.id;
+                        sendValue({ action: "edit", id: id });
+                    });
+
+                    li.querySelector('.delete-btn').addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const id = e.target.dataset.id;
+                        if (confirm(`Bạn có chắc chắn muốn xóa phương pháp '${id}' không?`)) {
+                            sendValue({ action: "delete", id: id });
+                        }
+                    });
+
+                    li.querySelector('.toggle-btn').addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const idx = e.target.dataset.index;
+                        const expEl = document.getElementById(`expanded-${idx}`);
+                        const btn = e.target;
+                        if (expEl.style.display === "none") {
+                            expEl.style.display = "flex";
+                            btn.textContent = "👇 Đóng";
+                        } else {
+                            expEl.style.display = "none";
+                            btn.textContent = "👁️ Chi tiết";
+                        }
+                        setTimeout(setFrameHeight, 30);
+                    });
+                } else if (item.type === 'criteria') {
+                    // Criteria mode
+                    li.dataset.id = item.id;
+                    
+                    const loai = item.loai_khai_bao || "Chỉ tiêu";
+                    let borderColor = "#0071e3"; // Chỉ tiêu: Xanh dương
+                    let badgeColor = "#0071e3";
+                    let badgeBg = "#f0f7ff";
+                    
+                    if (loai === "Định nghĩa") {
+                        borderColor = "#34c759"; // Định nghĩa: Xanh lá
+                        badgeColor = "#24b243";
+                        badgeBg = "#edf9ee";
+                    } else if (loai === "Cả hai") {
+                        borderColor = "#af52de"; // Cả hai: Tím
+                        badgeColor = "#9e38d6";
+                        badgeBg = "#f9f2fc";
+                    }
+                    
+                    li.style.borderLeftColor = borderColor;
+                    
+                    const badgeHtml = `<span style="font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 4px; background-color: ${badgeBg}; color: ${badgeColor}; border: 1px solid ${badgeColor}33; margin-left: 6px; display: inline-block;">${escapeHtml(loai)}</span>`;
+
+                    const muc = item.cap_do_phan_muc || 2;
+                    let mucText = "Mức " + muc;
+                    let mucColor = "#86868b";
+                    let mucBg = "#f5f5f7";
+                    if (muc === 1) {
+                        mucColor = "#ff9500"; // Cam
+                        mucBg = "#fff9f0";
+                    } else if (muc === 2) {
+                        mucColor = "#0071e3"; // Xanh dương
+                        mucBg = "#f0f7ff";
+                    } else if (muc === 3) {
+                        mucColor = "#5856d6"; // Tím/Indigo
+                        mucBg = "#f3f2fa";
+                    } else if (muc === 4) {
+                        mucColor = "#555555"; // Xám
+                        mucBg = "#e8e8ed";
+                    }
+                    const mucBadgeHtml = `<span style="font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 4px; background-color: ${mucBg}; color: ${mucColor}; border: 1px solid ${mucColor}33; margin-left: 6px; display: inline-block;">${escapeHtml(mucText)}</span>`;
+
+                    const methodsHtml = item.methods && item.methods.length > 0 
+                        ? item.methods.map(m => `<span class="kw-tag">${escapeHtml(m.name)} <code style="font-size: 10px; color: #86868b;">(${escapeHtml(m.id)})</code></span>`).join('') 
+                        : '<span class="kw-none">Chưa gán phương pháp</span>';
+                    
+                    const bangHtml = item.bang_di_kem 
+                        ? `<code>${escapeHtml(item.bang_di_kem)}</code>` 
+                        : '<span class="kw-none">Không có</span>';
+ 
+                    li.innerHTML = `
+                        ${handleHtml}
+                        <div class="card-content">
+                            <div class="card-top-row">
+                                <div class="card-title-group">
+                                    <span class="card-title-text" title="${escapeHtml(item.ten_hien_thi)}">🔹 ${escapeHtml(item.ten_hien_thi || 'Chưa có tên')}</span>
+                                    <span class="card-id-text">(${escapeHtml(item.id)})</span>
+                                    ${badgeHtml}
+                                    ${mucBadgeHtml}
+                                </div>
+                                <div class="card-actions">
+                                    <button class="action-btn edit-btn" data-id="${escapeHtml(item.id)}">✏️ Sửa</button>
+                                    <button class="action-btn delete-btn" data-id="${escapeHtml(item.id)}">🗑️ Xóa</button>
+                                    <button class="action-btn toggle-btn" data-index="${index}">👁️ Chi tiết</button>
+                                </div>
+                            </div>
+                            <div class="card-expanded-content" id="expanded-${index}" style="display: none;">
+                                <div class="method-split-row" style="margin-bottom: 8px;">
+                                    <div class="kw-section">
+                                        <div class="section-label">Ghi chú Từ điển / Dịch thuật:</div>
+                                        <div style="font-size: 12px; margin-top: 4px; color: #1d1d1f;">${escapeHtml(item.tu_dien_dich || 'Không có')}</div>
+                                    </div>
+                                    <div class="kw-section">
+                                        <div class="section-label">Bảng điền Form Word:</div>
+                                        <div style="margin-top: 4px;">${bangHtml}</div>
+                                    </div>
+                                </div>
+                                <div class="content-section" style="margin-bottom: 8px;">
+                                    <div class="section-label">Phương pháp áp dụng:</div>
+                                    <div class="kw-list" style="margin-top: 4px;">${methodsHtml}</div>
+                                </div>
+                                <div class="content-section">
+                                    <div class="section-label">Lệnh AI Trích xuất (Prompt):</div>
+                                    <pre class="sop-content-pre" style="margin-top: 4px;">${escapeHtml(item.lenh_ai_trich_xuat || '')}</pre>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    // Attach handlers for buttons
+                    li.querySelector('.edit-btn').addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const id = e.target.dataset.id;
+                        sendValue({ action: "edit", id: id });
+                    });
+
+                    li.querySelector('.delete-btn').addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const id = e.target.dataset.id;
+                        if (confirm(`Bạn có chắc chắn muốn xóa chỉ tiêu '${id}' không?`)) {
+                            sendValue({ action: "delete", id: id });
+                        }
+                    });
+
+                    li.querySelector('.toggle-btn').addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const idx = e.target.dataset.index;
+                        const expEl = document.getElementById(`expanded-${idx}`);
+                        const btn = e.target;
+                        if (expEl.style.display === "none") {
+                            expEl.style.display = "flex";
+                            btn.textContent = "👇 Đóng";
+                        } else {
+                            expEl.style.display = "none";
+                            btn.textContent = "👁️ Chi tiết";
+                        }
+                        setTimeout(setFrameHeight, 30);
+                    });
+                } else {
+                    // Object mode (SOP Library mode with buttons and details)
+                    li.dataset.id = item.id;
+                    const tuKhoaHtml = item.tu_khoa && item.tu_khoa.length > 0 
+                        ? item.tu_khoa.map(kw => `<span class="kw-tag">${escapeHtml(kw)}</span>`).join('') 
+                        : '<span class="kw-none">Không có từ khóa</span>';
+
+                    li.innerHTML = `
+                        ${handleHtml}
+                        <div class="card-content">
+                            <div class="card-top-row">
+                                <div class="card-title-group">
+                                    <span class="card-title-text" title="${escapeHtml(item.ten_hien_thi)}">🔹 ${escapeHtml(item.ten_hien_thi || 'Chưa có tên')}</span>
+                                    <span class="card-id-text">(${escapeHtml(item.id)})</span>
+                                </div>
+                                <div class="card-actions">
+                                    <button class="action-btn edit-btn" data-id="${escapeHtml(item.id)}">✏️ Sửa</button>
+                                    <button class="action-btn delete-btn" data-id="${escapeHtml(item.id)}">🗑️ Xóa</button>
+                                    <button class="action-btn toggle-btn" data-index="${index}">👁️ Chi tiết</button>
+                                </div>
+                            </div>
+                            <div class="card-expanded-content" id="expanded-${index}" style="display: none;">
+                                <div class="kw-section">
+                                    <div class="section-label">Từ khóa nhận diện tự động:</div>
+                                    <div class="kw-list">${tuKhoaHtml}</div>
+                                </div>
+                                <div class="content-section">
+                                    <div class="section-label">Nội dung phương pháp SOP mẫu:</div>
+                                    <pre class="sop-content-pre">${escapeHtml(item.noi_dung || '')}</pre>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    // Attach handlers for buttons
+                    li.querySelector('.edit-btn').addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const id = e.target.dataset.id;
+                        sendValue({ action: "edit", id: id });
+                    });
+
+                    li.querySelector('.delete-btn').addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const id = e.target.dataset.id;
+                        if (confirm(`Bạn có chắc chắn muốn xóa SOP mẫu '${id}' không?`)) {
+                            sendValue({ action: "delete", id: id });
+                        }
+                    });
+
+                    li.querySelector('.toggle-btn').addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const idx = e.target.dataset.index;
+                        const expEl = document.getElementById(`expanded-${idx}`);
+                        const btn = e.target;
+                        if (expEl.style.display === "none") {
+                            expEl.style.display = "flex";
+                            btn.textContent = "👇 Đóng";
+                        } else {
+                            expEl.style.display = "none";
+                            btn.textContent = "👁️ Chi tiết";
+                        }
+                        setTimeout(setFrameHeight, 30);
+                    });
+                }
+
+                // Bind mouse/touch on handle to control drag validation
+                const handleEl = li.querySelector('.handle');
+                if (handleEl) {
+                    handleEl.addEventListener('mousedown', () => { canDrag = true; });
+                    handleEl.addEventListener('touchstart', () => { canDrag = true; });
+                }
+
+                li.addEventListener("dragstart", onDragStart);
+                li.addEventListener("dragover",  onDragOver);
+                li.addEventListener("dragleave", onDragLeave);
+                li.addEventListener("drop",      onDrop);
+                li.addEventListener("dragend",   onDragEnd);
+
+                list.appendChild(li);
+            });
+            setTimeout(setFrameHeight, 30);
+        }
+
+        function escapeHtml(str) {
+            return String(str)
+                .replace(/&/g,"&amp;")
+                .replace(/</g,"&lt;")
+                .replace(/>/g,"&gt;")
+                .replace(/"/g,"&quot;");
+        }
+
+        // ---------- Drag handlers ----------
+        function onDragStart(e) {
+            if (!canDrag) {
+                e.preventDefault();
+                return;
+            }
+            dragEl = this;
+            this.classList.add("dragging");
+            e.dataTransfer.effectAllowed = "move";
+            e.dataTransfer.setData("text/plain", this.dataset.index);
+        }
+
+        function onDragOver(e) {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = "move";
+            if (dragOverEl && dragOverEl !== this) dragOverEl.classList.remove("drag-over");
+            if (this !== dragEl) {
+                this.classList.add("drag-over");
+                dragOverEl = this;
+            }
+        }
+
+        function onDragLeave(e) {
+            this.classList.remove("drag-over");
+            if (dragOverEl === this) dragOverEl = null;
+        }
+
+        function onDrop(e) {
+            e.preventDefault();
+            this.classList.remove("drag-over");
+            dragOverEl = null;
+            if (!dragEl || dragEl === this) return;
+
+            const allItems = Array.from(list.children);
+            const fromIdx = allItems.indexOf(dragEl);
+            const toIdx   = allItems.indexOf(this);
+
+            if (fromIdx === -1 || toIdx === -1) return;
+
+            // Reorder items array
+            const moved = items.splice(fromIdx, 1)[0];
+            items.splice(toIdx, 0, moved);
+
+            renderList();
+            status.textContent = "✅ Đã cập nhật thứ tự";
+            sendValue([...items]);
+            setTimeout(() => { status.textContent = ""; }, 2000);
+        }
+
+        function onDragEnd(e) {
+            if (dragEl) dragEl.classList.remove("dragging");
+            if (dragOverEl) dragOverEl.classList.remove("drag-over");
+            dragEl = null;
+            dragOverEl = null;
+            canDrag = false;
+        }
+    </script>
+</body>
+</html>

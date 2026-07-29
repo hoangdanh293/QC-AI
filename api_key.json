@@ -1,0 +1,53 @@
+{
+    "last_cleared_month": "2026-07",
+    "keys": [
+        {
+            "id": "00ebccba-1ffb-4209-b5ce-5defaf07e8bb",
+            "provider": "Google API",
+            "model": "gemini-2.5-flash",
+            "owner": "Hoàng Danh 1.1",
+            "key_string": "enc:gAAAAABqZq8R4ymGuWcPen1MjhgQav1OfZ2YMwnmmrha1eT5Qv9eB_kYMbQSFkhl6zJkCpUM4gkW0PNuiYg8D5Ef-ee8mYyO8SLq22MPUEkNJCNU5aYmQ7hAIYf71cEePnwWaRtYKCnwRnOXJxfhj3Z_4rd48Hdvgw==",
+            "is_active": true
+        },
+        {
+            "id": "07f3f8a5-ab2b-405d-94b8-5a8087e70e5c",
+            "provider": "Google API",
+            "model": "gemini-2.5-flash",
+            "owner": "Hoàng Danh 2.1",
+            "key_string": "enc:gAAAAABqZq8R-KnoR6HtiYKmkZU5a4RCRRR3rceAcqt6FzvwxP4cRl4OceVVI80Bzk29G7QXk1u4Fs1wuAfMn8Ubo9epgRiHikSmHZjkxyhlkAbepbnETp6J5UY_lMFHMzDZRi2zkaeQGIWkhY06CKMpKpX8ybUH3w==",
+            "is_active": true
+        },
+        {
+            "id": "60bba46b-6eae-4c6f-8c30-0d380f12dd2a",
+            "provider": "Google API",
+            "model": "gemma-4-31b-it",
+            "owner": "Hoàng Danh 2.2",
+            "key_string": "enc:gAAAAABqZq8RVmhYOm5EiIVUBqtVFnTbQFtxGT8gJWvAH8cN0EI87MxZ85_SZ3o-N5Tmtt1dyzPJSYhxc2Qld1MQIxEtUHggVTjnzwZo6t0dHeLSPVJ7tCgzbILNqs2eQr10ftrI-JBWp7qS7XL6RSc-_PVEnn8bnw==",
+            "is_active": true
+        },
+        {
+            "id": "2d9a1915-5514-43a4-a9f9-80e531f2ffe5",
+            "provider": "Google API",
+            "model": "gemma-4-31b-it",
+            "owner": "Hoàng Danh 1.2",
+            "key_string": "enc:gAAAAABqZq8Rtt7hMyTUpvlmQ46LRWit0TtGNjYrtaXUpRpNLe8X3wc6aW32FkXCCn06PnpV0QCW1V9YzQPsIvFb7eXmolgo86sj-pauP5r3-17Oia74s7T7tTt4l6RduMbtodJkIW8tVRn17NRB8dFoKcWWIVIvEg==",
+            "is_active": true
+        },
+        {
+            "id": "7d111b3c-3bd4-4875-b733-8dac949068fc",
+            "provider": "Google API",
+            "model": "gemini-2.5-flash",
+            "owner": "Hoàng Danh 3.1",
+            "key_string": "enc:gAAAAABqZq8RQiIFTrk-nzYLeVXWESdiVpjTiQSHdchB1HZAYs17sLuG5RJgy4l-Bhio7jtGPWP8mmw-1w3ZU-Mltyvb6VAfSVQ-T-1JkuljxpmPHt1pV2zWka-fS_XS5JXW0nX2jno-BL6kglJSqBZgoByG_-G0KA==",
+            "is_active": true
+        },
+        {
+            "id": "de1ccff5-5d7a-423b-8b48-9dcf9c3cc204",
+            "provider": "Google API",
+            "model": "gemma-4-31b-it",
+            "owner": "Hoàng Danh 3.2",
+            "key_string": "enc:gAAAAABqZq8R0Upk5fU4s8KzQYIYYM3oWgMkk6WC4FLWLh5e0qAk-d7MnDwijML2AHhgrjBzNzeEE-gcvAyrjXm9SYtHLPtZIvsVyXLmW9e-12xSJxTUp8ct3JTT-Yv_UnPTjM82A1QeR6COV8DqRg7drGNFJNTd_w==",
+            "is_active": true
+        }
+    ]
+}

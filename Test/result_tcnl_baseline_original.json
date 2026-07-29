@@ -1,0 +1,376 @@
+{
+  "label": "BASELINE",
+  "model": "gemma-4-31b-it",
+  "node0_time_sec": 77.91,
+  "node1_time_sec": 95.09,
+  "node2_time_sec": 94.42,
+  "total_time_sec": 267.42,
+  "monograph_name": "Folic acid hydrate",
+  "ep_criteria_count": 11,
+  "coa_criteria_count": 18,
+  "methods_count": 13,
+  "scan_accuracy_pct": 94.2,
+  "methods_accuracy_pct": 93.1,
+  "combined_accuracy_pct": 93.7,
+  "scan_scoring": {
+    "per_criteria": {
+      "tinh_chat": {
+        "name": "Tinh chat / Appearance",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Chi tieu duoc phat hien (match=2 tu khoa) (+10)",
+          "[OK] Gioi han khong rong: 'Bột kết tinh màu vàng hoặc cam / yellowish or orange, crystalline powder' (+5)",
+          "[OK] Gioi han chua tu khoa: ['yellow', 'orange', 'vang'] (+5)"
+        ],
+        "matched_gl": "Bột kết tinh màu vàng hoặc cam / yellowish or orange, crystalline powder"
+      },
+      "dinh_tinh_nhom": {
+        "name": "Dinh tinh nhom / Identification group",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Chi tieu duoc phat hien (match=4 tu khoa) (+10)",
+          "[OK] Gioi han khong rong: 'Định tính lần một: A, B, D. Định tính lần hai: A, C / First identification: A, B' (+5)",
+          "[OK] Gioi han chua tu khoa: ['first', 'second', 'a'] (+5)"
+        ],
+        "matched_gl": "Định tính lần một: A, B, D. Định tính lần hai: A, C / First identification: A, B, D. Second identification: A, C"
+      },
+      "dinh_tinh_A": {
+        "name": "Dinh tinh A / Identification A",
+        "score": 15,
+        "max": 20,
+        "details": [
+          "[OK] Chi tieu duoc phat hien (match=2 tu khoa) (+10)",
+          "[OK] Gioi han khong rong: 'Định tính lần một: A, B, D. Định tính lần hai: A, C / First identification: A, B' (+5)",
+          "[FAIL] Thieu tu khoa trong gioi han: ['quay cuc', 'optical rotation', '+18']"
+        ],
+        "matched_gl": "Định tính lần một: A, B, D. Định tính lần hai: A, C / First identification: A, B, D. Second identification: A, C"
+      },
+      "dinh_tinh_B": {
+        "name": "Dinh tinh B / Identification B",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Chi tieu duoc phat hien (match=2 tu khoa) (+10)",
+          "[OK] Gioi han khong rong: 'Định tính lần một: A, B, D. Định tính lần hai: A, C / First identification: A, B' (+5)",
+          "[OK] Gioi han chua tu khoa: ['ir'] (+5)"
+        ],
+        "matched_gl": "Định tính lần một: A, B, D. Định tính lần hai: A, C / First identification: A, B, D. Second identification: A, C"
+      },
+      "dinh_tinh_C": {
+        "name": "Dinh tinh C / Identification C",
+        "score": 15,
+        "max": 20,
+        "details": [
+          "[OK] Chi tieu duoc phat hien (match=2 tu khoa) (+10)",
+          "[OK] Gioi han khong rong: 'Định tính lần một: A, B, D. Định tính lần hai: A, C / First identification: A, B' (+5)",
+          "[FAIL] Thieu tu khoa trong gioi han: ['thin layer', 'chromatography', 'tlc']"
+        ],
+        "matched_gl": "Định tính lần một: A, B, D. Định tính lần hai: A, C / First identification: A, B, D. Second identification: A, C"
+      },
+      "dinh_tinh_D": {
+        "name": "Dinh tinh D / Identification D",
+        "score": 15,
+        "max": 20,
+        "details": [
+          "[OK] Chi tieu duoc phat hien (match=2 tu khoa) (+10)",
+          "[OK] Gioi han khong rong: 'Định tính lần một: A, B, D. Định tính lần hai: A, C / First identification: A, B' (+5)",
+          "[FAIL] Thieu tu khoa trong gioi han: ['water', 'nuoc', 'see tests']"
+        ],
+        "matched_gl": "Định tính lần một: A, B, D. Định tính lần hai: A, C / First identification: A, B, D. Second identification: A, C"
+      },
+      "do_tan": {
+        "name": "Do tan / Solubility",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Chi tieu duoc phat hien (match=1 tu khoa) (+10)",
+          "[OK] Gioi han khong rong: 'Hầu như không tan trong nước và trong hầu hết các dung môi hữu cơ. Tan trong aci' (+5)",
+          "[OK] Gioi han chua tu khoa: ['soluble', 'tan', 'water'] (+5)"
+        ],
+        "matched_gl": "Hầu như không tan trong nước và trong hầu hết các dung môi hữu cơ. Tan trong acid loãng và trong dung dịch kiềm / practically insoluble in water and in most organic solvents. It dissolves in dilute ac"
+      },
+      "ham_luong_nuoc": {
+        "name": "Ham luong nuoc / Water",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Chi tieu duoc phat hien (match=1 tu khoa) (+10)",
+          "[OK] Gioi han khong rong: 'Đáp ứng phép thử Hàm lượng nước (xem mục nước) / Complies with the test for wate' (+5)",
+          "[OK] Gioi han chua tu khoa: ['water'] (+5)"
+        ],
+        "matched_gl": "Đáp ứng phép thử Hàm lượng nước (xem mục nước) / Complies with the test for water"
+      },
+      "tap_chat_lien_quan": {
+        "name": "Tap chat lien quan / Related substances",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Chi tieu duoc phat hien (match=4 tu khoa) (+10)",
+          "[OK] Gioi han khong rong: 'Tạp chất A: tối đa 0,5%; Tạp chất D: tối đa 0,4%; Tạp chất C, E, G: mỗi tạp chất' (+5)",
+          "[OK] Gioi han chua tu khoa: ['0.5', '0,5', 'impurity'] (+5)"
+        ],
+        "matched_gl": "Tạp chất A: tối đa 0,5%; Tạp chất D: tối đa 0,4%; Tạp chất C, E, G: mỗi tạp chất tối đa 0,3%; Tạp chất H, I: mỗi tạp chất tối đa 0,15%; Tạp chất không xác định: mỗi tạp chất tối đa 0,10%; Tổng cộng: t"
+      },
+      "dinh_luong": {
+        "name": "Dinh luong / Assay",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Chi tieu duoc phat hien (match=1 tu khoa) (+10)",
+          "[OK] Gioi han khong rong: '96,0% đến 102,0% (tính trên chế phẩm khan) / 96.0 per cent to 102.0 per cent (an' (+5)",
+          "[OK] Gioi han chua tu khoa: ['96.0', '96,0', '102.0'] (+5)"
+        ],
+        "matched_gl": "96,0% đến 102,0% (tính trên chế phẩm khan) / 96.0 per cent to 102.0 per cent (anhydrous substance)"
+      },
+      "tro_sulfat": {
+        "name": "Tro sulfat / Sulfated ash",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Chi tieu duoc phat hien (match=2 tu khoa) (+10)",
+          "[OK] Gioi han khong rong: 'Tối đa 0,2% / maximum 0.2 per cent' (+5)",
+          "[OK] Gioi han chua tu khoa: ['0.2', '0,2'] (+5)"
+        ],
+        "matched_gl": "Tối đa 0,2% / maximum 0.2 per cent"
+      },
+      "acid_d_folic": {
+        "name": "Acid D-folic / D-folic acid",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Chi tieu duoc phat hien (match=4 tu khoa) (+10)",
+          "[OK] Gioi han khong rong: 'Không quá 0,3% (a/a) / ≤ 0.3 % (a/a)' (+5)",
+          "[OK] Gioi han chua tu khoa: ['0.3', '0,3'] (+5)"
+        ],
+        "matched_gl": "Không quá 0,3% (a/a) / ≤ 0.3 % (a/a)"
+      },
+      "acetone": {
+        "name": "Acetone",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Chi tieu duoc phat hien (match=1 tu khoa) (+10)",
+          "[OK] Gioi han khong rong: 'Không quá 1000 ppm / ≤ 1000 ppm' (+5)",
+          "[OK] Gioi han chua tu khoa: ['1000', 'ppm'] (+5)"
+        ],
+        "matched_gl": "Không quá 1000 ppm / ≤ 1000 ppm"
+      }
+    },
+    "total_score": 245,
+    "max_score": 260,
+    "accuracy_pct": 94.2
+  },
+  "methods_scoring": {
+    "per_criteria": {
+      "tinh_chat": {
+        "name": "Tinh chat / Appearance",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Co phuong phap (390 ky tu) (+8)",
+          "[OK] Khong co tu khoa SOP kiem tra (+6)",
+          "[OK] Ten chi tieu nhan dien dung (match=2) (+6)"
+        ],
+        "method_preview": "Theo chuyên luận Folic acid hydrate - European Pharmacopoeia 11.0 / According to the monograph Folic acid hydrate - European Pharmacopoeia 11.0\n\nCách tiến hành: Quan sát cảm quan màu sắc và trạng thái"
+      },
+      "dinh_tinh_nhom": {
+        "name": "Dinh tinh nhom / Identification group",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Co phuong phap (459 ky tu) (+8)",
+          "[OK] Khong co tu khoa SOP kiem tra (+6)",
+          "[OK] Ten chi tieu nhan dien dung (match=4) (+6)"
+        ],
+        "method_preview": "Theo chuyên luận Folic acid hydrate - European Pharmacopoeia 11.0 / According to the monograph Folic acid hydrate - European Pharmacopoeia 11.0\n\nCách tiến hành: Thực hiện các phép thử định tính theo n"
+      },
+      "dinh_tinh_A": {
+        "name": "Dinh tinh A / Identification A",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Co phuong phap (459 ky tu) (+8)",
+          "[OK] Khong co tu khoa SOP kiem tra (+6)",
+          "[OK] Ten chi tieu nhan dien dung (match=2) (+6)"
+        ],
+        "method_preview": "Theo chuyên luận Folic acid hydrate - European Pharmacopoeia 11.0 / According to the monograph Folic acid hydrate - European Pharmacopoeia 11.0\n\nCách tiến hành: Thực hiện các phép thử định tính theo n"
+      },
+      "dinh_tinh_B": {
+        "name": "Dinh tinh B / Identification B",
+        "score": 14,
+        "max": 20,
+        "details": [
+          "[OK] Co phuong phap (459 ky tu) (+8)",
+          "[FAIL] Thieu tu khoa SOP: ['infrared', 'absorption', 'hong ngoai']",
+          "[OK] Ten chi tieu nhan dien dung (match=2) (+6)"
+        ],
+        "method_preview": "Theo chuyên luận Folic acid hydrate - European Pharmacopoeia 11.0 / According to the monograph Folic acid hydrate - European Pharmacopoeia 11.0\n\nCách tiến hành: Thực hiện các phép thử định tính theo n"
+      },
+      "dinh_tinh_C": {
+        "name": "Dinh tinh C / Identification C",
+        "score": 14,
+        "max": 20,
+        "details": [
+          "[OK] Co phuong phap (459 ky tu) (+8)",
+          "[FAIL] Thieu tu khoa SOP: ['thin layer', 'tlc', 'sac ky']",
+          "[OK] Ten chi tieu nhan dien dung (match=2) (+6)"
+        ],
+        "method_preview": "Theo chuyên luận Folic acid hydrate - European Pharmacopoeia 11.0 / According to the monograph Folic acid hydrate - European Pharmacopoeia 11.0\n\nCách tiến hành: Thực hiện các phép thử định tính theo n"
+      },
+      "dinh_tinh_D": {
+        "name": "Dinh tinh D / Identification D",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Co phuong phap (459 ky tu) (+8)",
+          "[OK] Chua tu khoa SOP: ['tests'] (+6)",
+          "[OK] Ten chi tieu nhan dien dung (match=2) (+6)"
+        ],
+        "method_preview": "Theo chuyên luận Folic acid hydrate - European Pharmacopoeia 11.0 / According to the monograph Folic acid hydrate - European Pharmacopoeia 11.0\n\nCách tiến hành: Thực hiện các phép thử định tính theo n"
+      },
+      "do_tan": {
+        "name": "Do tan / Solubility",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Co phuong phap (629 ky tu) (+8)",
+          "[OK] Khong co tu khoa SOP kiem tra (+6)",
+          "[OK] Ten chi tieu nhan dien dung (match=1) (+6)"
+        ],
+        "method_preview": "Theo chuyên luận Folic acid hydrate - European Pharmacopoeia 11.0\n\nCách tiến hành: Quan sát khả năng hòa tan của mẫu thử trong các dung môi quy định. / Procedure: Observe the solubility of the test sa"
+      },
+      "ham_luong_nuoc": {
+        "name": "Ham luong nuoc / Water",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Co phuong phap (319 ky tu) (+8)",
+          "[OK] Chua tu khoa SOP: ['karl fischer', '2.5.12', 'water'] (+6)",
+          "[OK] Ten chi tieu nhan dien dung (match=1) (+6)"
+        ],
+        "method_preview": "Theo chuyên luận Folic acid hydrate - European Pharmacopoeia 11.0 (2.5.12)\n\nPhương pháp: Chuẩn độ Karl Fischer / Method: Karl Fischer titration\nKhối lượng mẫu: 0,150 g / Sample weight: 0.150 g\n\nYêu cầ"
+      },
+      "tap_chat_lien_quan": {
+        "name": "Tap chat lien quan / Related substances",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Co phuong phap (4609 ky tu) (+8)",
+          "[OK] Chua tu khoa SOP: ['hplc', 'impurit'] (+6)",
+          "[OK] Ten chi tieu nhan dien dung (match=4) (+6)"
+        ],
+        "method_preview": "Theo chuyên luận Folic acid hydrate - European Pharmacopoeia 11.0\n\n1. Phương pháp Sắc ký lỏng hiệu năng cao (HPLC) / Liquid chromatography (HPLC):\n\nA. Điều kiện sắc ký / Chromatographic conditions:\n✓ "
+      },
+      "dinh_luong": {
+        "name": "Dinh luong / Assay",
+        "score": 14,
+        "max": 20,
+        "details": [
+          "[OK] Co phuong phap (2607 ky tu) (+8)",
+          "[FAIL] Thieu tu khoa SOP: ['assay', 'dinh luong', 'hplc']",
+          "[OK] Ten chi tieu nhan dien dung (match=1) (+6)"
+        ],
+        "method_preview": "Yêu cầu: 96,0% đến 102,0% (tính trên chế phẩm khan) / Requirement: 96.0 per cent to 102.0 per cent (anhydrous substance).\n\nTheo chuyên luận Folic acid hydrate - EP 11.0\n\n**A. Điều kiện sắc ký / Chroma"
+      },
+      "tro_sulfat": {
+        "name": "Tro sulfat / Sulfated ash",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Co phuong phap (370 ky tu) (+8)",
+          "[OK] Chua tu khoa SOP: ['sulfated'] (+6)",
+          "[OK] Ten chi tieu nhan dien dung (match=2) (+6)"
+        ],
+        "method_preview": "Yêu cầu: Tối đa 0,2% / Requirement: Maximum 0.2 per cent.\n\nTheo chuyên luận Folic acid hydrate - EP 11.0\n\nCách tiến hành:\nCân chính xác khoảng 1,0 g mẫu thử. / Weigh approximately 1.0 g of the substan"
+      },
+      "acid_d_folic": {
+        "name": "Acid D-folic / D-folic acid",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Co phuong phap (268 ky tu) (+8)",
+          "[OK] Chua tu khoa SOP: ['theo', 'standard', 'manufacturer'] (+6)",
+          "[OK] Ten chi tieu nhan dien dung (match=4) (+6)"
+        ],
+        "method_preview": "Yêu cầu: Không quá 0,3% (a/a) / Requirement: Not more than 0.3% (a/a).\n\nCách tiến hành: Thực hiện theo chuyên luận của nhà sản xuất. / Procedure: Perform according to the manufacturer's standards.\n\nYê"
+      },
+      "acetone": {
+        "name": "Acetone",
+        "score": 20,
+        "max": 20,
+        "details": [
+          "[OK] Co phuong phap (463 ky tu) (+8)",
+          "[OK] Chua tu khoa SOP: ['theo', 'manufacturer'] (+6)",
+          "[OK] Ten chi tieu nhan dien dung (match=1) (+6)"
+        ],
+        "method_preview": "Theo tiêu chuẩn của nhà sản xuất dsm-firmenich / According to the manufacturer's specifications (dsm-firmenich).\n\nPhương pháp: Sắc ký khí / Method: Gas chromatography.\n\nCách tiến hành: Thực hiện theo "
+      }
+    },
+    "total_score": 242,
+    "max_score": 260,
+    "accuracy_pct": 93.1
+  },
+  "ep_list": [
+    {
+      "ten_chi_tieu": "Định lượng / Assay",
+      "gioi_han": "96,0% đến 102,0% (tính trên chế phẩm khan) / 96.0 per cent to 102.0 per cent (anhydrous substance)"
+    },
+    {
+      "ten_chi_tieu": "Tính chất / Appearance",
+      "gioi_han": "Bột kết tinh màu vàng hoặc cam / yellowish or orange, crystalline powder"
+    },
+    {
+      "ten_chi_tieu": "Độ tan / Solubility",
+      "gioi_han": "Hầu như không tan trong nước và trong hầu hết các dung môi hữu cơ. Tan trong acid loãng và trong dung dịch kiềm / practically insoluble in water and in most organic solvents. It dissolves in dilute acids and in alkaline solutions"
+    },
+    {
+      "ten_chi_tieu": "Nhóm định tính / Identification group",
+      "gioi_han": "Định tính lần một: A, B, D. Định tính lần hai: A, C / First identification: A, B, D. Second identification: A, C"
+    },
+    {
+      "ten_chi_tieu": "Định tính A (Quay cực đặc trưng) / Identification A (Specific optical rotation)",
+      "gioi_han": "+ 18 đến + 22 (tính trên chế phẩm khan) / + 18 to + 22 (anhydrous substance)"
+    },
+    {
+      "ten_chi_tieu": "Định tính B (Phổ hấp thụ hồng ngoại) / Identification B (Infrared absorption spectrophotometry)",
+      "gioi_han": "Phù hợp với folic acid CRS / Comparison: folic acid CRS"
+    },
+    {
+      "ten_chi_tieu": "Định tính C (Sắc ký lớp mỏng) / Identification C (Thin-layer chromatography)",
+      "gioi_han": "Vết chính trên sắc ký đồ thu được từ dung dịch thử tương tự về vị trí, huỳnh quang và kích thước với vết chính trên sắc ký đồ thu được từ dung dịch đối chiếu / the principal spot in the chromatogram obtained with the test solution is similar in position, fluorescence and size to the principal spot in the chromatogram obtained with the reference solution"
+    },
+    {
+      "ten_chi_tieu": "Định tính D (Nước) / Identification D (Water)",
+      "gioi_han": "Đáp ứng phép thử Hàm lượng nước (xem mục nước) / Complies with the test for water"
+    },
+    {
+      "ten_chi_tieu": "Tạp chất liên quan / Related substances",
+      "gioi_han": "Tạp chất A: tối đa 0,5%; Tạp chất D: tối đa 0,4%; Tạp chất C, E, G: mỗi tạp chất tối đa 0,3%; Tạp chất H, I: mỗi tạp chất tối đa 0,15%; Tạp chất không xác định: mỗi tạp chất tối đa 0,10%; Tổng cộng: tối đa 1,2%; Ngưỡng báo cáo: 0,05% / impurity A: maximum 0.5 per cent; impurity D: maximum 0.4 per cent; impurities C, E, G: for each impurity, maximum 0.3 per cent; impurities H, I: for each impurity, maximum 0.15 per cent; unspecified impurities: for each impurity, maximum 0.10 per cent; total: maximum 1.2 per cent; reporting threshold: 0.05 per cent"
+    },
+    {
+      "ten_chi_tieu": "Hàm lượng nước / Water",
+      "gioi_han": "5,0% đến 8,5% / 5.0 per cent to 8.5 per cent"
+    },
+    {
+      "ten_chi_tieu": "Tro sulfat / Sulfated ash",
+      "gioi_han": "Tối đa 0,2% / maximum 0.2 per cent"
+    }
+  ],
+  "methods": {
+    "Tính chất / Appearance": "Theo chuyên luận Folic acid hydrate - European Pharmacopoeia 11.0 / According to the monograph Folic acid hydrate - European Pharmacopoeia 11.0\n\nCách tiến hành: Quan sát cảm quan màu sắc và trạng thái vật lý của mẫu thử / Procedure: Visually observe the color and physical state of the sample.\n\nYêu cầu: Bột kết tinh màu vàng hoặc cam / Requirement: Yellowish or orange, crystalline powder.",
+    "Định tính nhóm / Identification group": "Theo chuyên luận Folic acid hydrate - European Pharmacopoeia 11.0 / According to the monograph Folic acid hydrate - European Pharmacopoeia 11.0\n\nCách tiến hành: Thực hiện các phép thử định tính theo nhóm quy định / Procedure: Perform the identification tests according to the specified groups.\n\nYêu cầu:\n- Nhóm I (Định tính lần một): Phép thử A, B, D / First identification: A, B, D.\n- Nhóm II (Định tính lần hai): Phép thử A, C / Second identification: A, C.",
+    "Định tính A (Quay cực đặc trưng) / Identification A (Specific optical rotation)": "Theo chuyên luận Folic acid hydrate - European Pharmacopoeia 11.0 / According to the monograph Folic acid hydrate - European Pharmacopoeia 11.0\n\nCách pha mẫu: Hòa tan 0,25 g trong dung dịch sodium hydroxide R nồng độ 4,2 g/L và pha loãng đến 25,0 mL bằng chính dung dịch này / Dissolve 0.25 g in a 4.2 g/L solution of sodium hydroxide R and dilute to 25.0 mL with the same solution.\n\nCách tiến hành: Đo góc quay cực riêng của dung dịch trên bằng máy đo phân cực theo phương pháp 2.2.7 / Procedure: Measure the specific optical rotation of the above solution using a polarimeter according to method 2.2.7.\n\nYêu cầu: +18 đến +22 (tính trên chế phẩm khan) / Requirement: +18 to +22 (anhydrous substance).",
+    "Acetone": "Theo tiêu chuẩn của nhà sản xuất dsm-firmenich / According to the manufacturer's specifications (dsm-firmenich).\n\nPhương pháp: Sắc ký khí / Method: Gas chromatography.\n\nCách tiến hành: Thực hiện theo chuyên luận của Dược điển hiện hành hoặc theo tiêu chuẩn của nhà sản xuất. / Procedure: Perform according to the current Pharmacopoeia monograph or according to the manufacturer's specifications.\n\nYêu cầu: Không quá 1000 ppm / Requirement: Not more than 1000 ppm.",
+    "Định tính B (Phổ hấp thụ hồng ngoại) / Identification B (IR spectrophotometry)": "Theo chuyên luận Folic acid hydrate - European Pharmacopoeia 11.0\n\nCách tiến hành: Thực hiện theo chuyên luận của Dược điển hiện hành hoặc theo tiêu chuẩn của nhà sản xuất (phương pháp 2.2.24). / Procedure: Perform according to the current Pharmacopoeia monograph or manufacturer's standards (method 2.2.24).\n\nYêu cầu: Phổ hấp thụ hồng ngoại của mẫu thử phải phù hợp với phổ của folic acid CRS. / Requirement: Comparison: folic acid CRS.",
+    "Định tính C (Sắc ký lớp mỏng) / Identification C (Thin-layer chromatography)": "Theo chuyên luận Folic acid hydrate - European Pharmacopoeia 11.0\n\n**A. Điều kiện sắc ký / Chromatographic conditions**\n✓ Bản mỏng: Bản mỏng silica gel R / Plate: TLC silica gel plate R\n✓ Pha động: ammonia đậm đặc R, propanol R, ethanol (96%) R (20:20:60 V/V/V) / Mobile phase: concentrated ammonia R, propanol R, ethanol (96 per cent) R (20:20:60 V/V/V)\n✓ Thể tích chấm: 2 $\\mu$L / Application: 2 $\\mu$L\n✓ Chiều dài triển khai: trên 3/4 bản mỏng / Development: over 3/4 of the plate\n✓ Điều kiện sấy: trong không khí / Drying: in air\n✓ Phát hiện: quan sát dưới ánh sáng tử ngoại ở bước sóng 365 nm / Detection: examine in ultraviolet light at 365 nm\n\n**B. Nội dung chi tiết phương pháp / Detailed procedure**\nChuẩn bị mẫu / Sample preparation:\n- Dung dịch thử: Hòa tan 50 mg chất thử trong hỗn hợp gồm 2 thể tích ammonia đậm đặc R và 9 thể tích methanol R, pha loãng đến 100 mL bằng cùng hỗn hợp dung môi. / Test solution: Dissolve 50 mg of the substance to be examined in a mixture of 2 volumes of concentrated ammonia R and 9 volumes of methanol R, and dilute to 100 mL with the same mixture of solvents.\n- Dung dịch đối chiếu: Hòa tan 50 mg folic acid CRS trong hỗn hợp gồm 2 thể tích ammonia đậm đặc R và 9 thể tích methanol R, pha loãng đến 100 mL bằng cùng hỗn hợp dung môi. / Reference solution: Dissolve 50 mg of folic acid CRS in a mixture of 2 volumes of concentrated ammonia R and 9 volumes of methanol R, and dilute to 100 mL with the same mixture of solvents.\n\nCách tiến hành / Procedure:\nChấm dung dịch thử và dung dịch đối chiếu lên bản mỏng, triển khai và phát hiện theo điều kiện trên. / Apply the test solution and reference solution to the plate, develop and detect according to the conditions above.\n\nYêu cầu: Vết chính trong sắc ký đồ thu được từ dung dịch thử tương tự về vị trí, huỳnh quang và kích thước so với vết chính trong sắc ký đồ thu được từ dung dịch đối chiếu. / Requirement: The principal spot in the chromatogram obtained with the test solution is similar in position, fluorescence and size to the principal spot in the chromatogram obtained with the reference solution.",
+    "Định tính D (Hàm lượng nước) / Identification D (Water)": "Theo chuyên luận Folic acid hydrate - European Pharmacopoeia 11.0 (2.5.12)\n\nPhương pháp: Chuẩn độ Karl Fischer / Method: Karl Fischer titration\nKhối lượng mẫu: 0,150 g / Sample weight: 0.150 g\n\nYêu cầu: Hàm lượng nước từ 5,0% đến 8,5%. / Requirement: Water (2.5.12): 5.0 per cent to 8.5 per cent, determined on 0.150 g.",
+    "Định lượng / Assay": "Yêu cầu: 96,0% đến 102,0% (tính trên chế phẩm khan) / Requirement: 96.0 per cent to 102.0 per cent (anhydrous substance).\n\nTheo chuyên luận Folic acid hydrate - EP 11.0\n\n**A. Điều kiện sắc ký / Chromatographic conditions**\n✓ Cột sắc ký: Octylsilyl silica gel cho sắc ký R (5 µm), kích thước l = 0,25 m, Ø = 4,0 mm / Column: spherical octylsilyl silica gel for chromatography R (5 µm), size: l = 0.25 m, Ø = 4.0 mm\n✓ Đầu dò (Detector): UV 280 nm / Detection: spectrophotometer at 280 nm\n✓ Tốc độ dòng: 0,6 ml/phút / Flow rate: 0.6 mL/min\n✓ Thể tích tiêm: 5 µL / Injection: 5 µL\n✓ Thời gian chạy: 3,3 lần thời gian lưu của acid folic / Run time: 3.3 times the retention time of folic acid\n\n**B. Nội dung chi tiết phương pháp / Detailed procedure**\n* Thành phần pha động / Mobile phase:\n- Dung dịch A: Dung dịch Sodium carbonate R nồng độ 28,6 g/L / Solution A: 28.6 g/L solution of sodium carbonate R.\n- Pha động: Trộn 12 thể tích Methanol R và 88 thể tích dung dịch chứa 11,16 g/L Potassium dihydrogen phosphate R và 5,50 g/L Dipotassium hydrogen phosphate R; điều chỉnh pH đến 6,4 bằng Phosphoric acid loãng R / Mobile phase: mix 12 volumes of methanol R and 88 volumes of a solution containing 11.16 g/L of potassium dihydrogen phosphate R and 5.50 g/L of dipotassium hydrogen phosphate R; adjust to pH 6.4 with dilute phosphoric acid R.\n\n* Chuẩn bị mẫu / Sample preparation:\n- Dung dịch thử / Test solution: Hòa tan 50,0 mg chế phẩm cần kiểm tra trong 2,5 mL dung dịch A và pha loãng đến 50,0 mL bằng pha động. Pha loãng 2,0 mL dung dịch này thành 10,0 mL bằng pha động / Test solution: Dissolve 50.0 mg of the substance to be examined in 2.5 mL of solution A and dilute to 50.0 mL with the mobile phase. Dilute 2.0 mL of this solution to 10.0 mL with the mobile phase.\n- Dung dịch chuẩn (a) / Reference solution (a): Hòa tan 50,0 mg folic acid CRS trong 2,5 mL dung dịch A và pha loãng đến 50,0 mL bằng pha động. Pha loãng 2,0 mL dung dịch này thành 10,0 mL bằng pha động / Reference solution (a): Dissolve 50.0 mg of folic acid CRS in 2.5 mL of solution A and dilute to 50.0 mL with the mobile phase. Dilute 2.0 mL of this solution to 10.0 mL with the mobile phase.\n\n* Cách tiến hành / Procedure:\nTiêm dung dịch thử và dung dịch chuẩn (a) vào hệ thống sắc ký, ghi lại sắc ký đồ và đo diện tích pic của acid folic / Inject test solution and reference solution (a) into the chromatographic system, record the chromatogram and measure the peak area of folic acid.\n\nYêu cầu: Hàm lượng từ 96,0% đến 102,0% tính trên chế phẩm khan / Requirement: Content: 96.0 per cent to 102.0 per cent (anhydrous substance).",
+    "Tro sulfat / Sulfated ash": "Yêu cầu: Tối đa 0,2% / Requirement: Maximum 0.2 per cent.\n\nTheo chuyên luận Folic acid hydrate - EP 11.0\n\nCách tiến hành:\nCân chính xác khoảng 1,0 g mẫu thử. / Weigh approximately 1.0 g of the substance.\nThực hiện theo phương pháp tro sulfat (2.4.14). / Perform according to the sulfated ash method (2.4.14).\n\nYêu cầu: Không quá 0,2% / Requirement: Maximum 0.2 per cent.",
+    "Acid D-folic / D-folic acid": "Yêu cầu: Không quá 0,3% (a/a) / Requirement: Not more than 0.3% (a/a).\n\nCách tiến hành: Thực hiện theo chuyên luận của nhà sản xuất. / Procedure: Perform according to the manufacturer's standards.\n\nYêu cầu: Không quá 0,3% (a/a) / Requirement: Not more than 0.3% (a/a).",
+    "Độ tan / Solubility": "Theo chuyên luận Folic acid hydrate - European Pharmacopoeia 11.0\n\nCách tiến hành: Quan sát khả năng hòa tan của mẫu thử trong các dung môi quy định. / Procedure: Observe the solubility of the test sample in the specified solvents.\n\nĐộ tan: Thực tế không tan trong nước và trong hầu hết các dung môi hữu cơ. Hòa tan trong acid loãng và trong dung dịch kiềm. / Solubility: practically insoluble in water and in most organic solvents. It dissolves in dilute acids and in alkaline solutions.\n\nYêu cầu: Hầu như không tan trong nước; tan trong dung dịch kiềm / Requirement: Practically insoluble in water; soluble in alkali solutions.",
+    "Hàm lượng nước / Water": "Theo chuyên luận Folic acid hydrate - European Pharmacopoeia 11.0\n\nPhương pháp: Karl Fischer (2.5.12) / Method: Karl Fischer (2.5.12).\nKhối lượng mẫu: Xác định trên 0,150 g mẫu thử. / Sample weight: determined on 0.150 g.\n\nYêu cầu: Hàm lượng nước từ 5,0% đến 8,5% / Requirement: Water 5.0 per cent to 8.5 per cent.",
+    "Tạp chất liên quan / Related substances": "Theo chuyên luận Folic acid hydrate - European Pharmacopoeia 11.0\n\n1. Phương pháp Sắc ký lỏng hiệu năng cao (HPLC) / Liquid chromatography (HPLC):\n\nA. Điều kiện sắc ký / Chromatographic conditions:\n✓ Cột sắc ký: C18 (250 mm x 4,0 mm; 5 µm) / Column: size: l = 0.25 m, Ø = 4.0 mm; stationary phase: spherical octylsilyl silica gel for chromatography R (5 µm)\n✓ Đầu dò (Detector): UV 280 nm / Detection: spectrophotometer at 280 nm\n✓ Tốc độ dòng: 0,6 ml/phút / Flow rate: 0.6 mL/min\n✓ Thể tích tiêm: 5 µL / Injection: 5 µL\n✓ Thời gian chạy: 3,3 lần thời gian lưu của acid folic / Run time: 3.3 times the retention time of folic acid\n\nB. Nội dung chi tiết phương pháp / Detailed procedure:\n- Thành phần pha động / Mobile phase: Trộn 12 thể tích methanol R và 88 thể tích dung dịch chứa 11,16 g/L kali dihydrophosphat R và 5,50 g/L dikali hydrophosphat R; điều chỉnh pH đến 6,4 bằng acid phosphoric loãng R. / Mix 12 volumes of methanol R and 88 volumes of a solution containing 11.16 g/L of potassium dihydrogen phosphate R and 5.50 g/L of dipotassium hydrogen phosphate R; adjust to pH 6.4 with dilute phosphoric acid R.\n- Chuẩn bị mẫu / Sample preparation:\n+ Dung dịch A / Solution A: Dung dịch sodium carbonate R nồng độ 28,6 g/L. / 28.6 g/L solution of sodium carbonate R.\n+ Dung dịch thử / Test solution: Hòa tan 50,0 mg mẫu thử trong 2,5 mL dung dịch A và pha loãng đến 50,0 mL bằng pha động. Pha loãng tiếp 2,0 mL dung dịch này thành 10,0 mL bằng pha động. / Dissolve 50.0 mg of the substance to be examined in 2.5 mL of solution A and dilute to 50.0 mL with the mobile phase. Dilute 2.0 mL of this solution to 10.0 mL with the mobile phase.\n+ Dung dịch đối chiếu (a) / Reference solution (a): Hòa tan 50,0 mg acid folic CRS trong 2,5 mL dung dịch A và pha loãng đến 50,0 mL bằng pha động. Pha loãng tiếp 2,0 mL dung dịch này thành 10,0 mL bằng pha động. / Dissolve 50.0 mg of folic acid CRS in 2.5 mL of solution A and dilute to 50.0 mL with the mobile phase. Dilute 2.0 mL of this solution to 10.0 mL with the mobile phase.\n\n- Tính thích hợp hệ thống / System suitability: Sử dụng dung dịch đối chiếu (b) để kiểm tra độ phân giải tối thiểu 2,0 giữa pic acid folic và tạp chất E; tỷ lệ pic-đáy tối thiểu 1,5 giữa tạp chất C và acid folic; tỷ thiểu 1,5 giữa tạp chất G và tạp chất H. / System suitability: reference solution (b): resolution: minimum 2.0 between the peaks due to folic acid and impurity E; peak-to-valley ratio: minimum 1.5 between impurity C and folic acid; minimum 1.5 between impurity G and impurity H.\n\n2. Phương pháp Sắc ký lớp mỏng (TLC) / Thin-layer chromatography (TLC):\n\nA. Điều kiện sắc ký / Chromatographic conditions:\n✓ Bản mỏng: Bản mỏng silica gel R / Plate: TLC silica gel plate R\n✓ Pha động: Ammonia đậm đặc R, propanol R, ethanol (96%) R (20:20:60 V/V/V) / Mobile phase: concentrated ammonia R, propanol R, ethanol (96 per cent) R (20:20:60 V/V/V)\n✓ Thể tích chấm: 2 µL / Application: 2 µL\n✓ Chiều dài triển khai: Triển khai trên 3/4 bản mỏng / Development: over 3/4 of the plate\n✓ Phát hiện: Soi tia cực tím ở bước sóng 365 nm / Detection: examine in ultraviolet light at 365 nm\n\nB. Nội dung chi tiết phương pháp / Detailed procedure:\n- Chuẩn bị mẫu / Sample preparation:\n+ Dung dịch thử / Test solution: Hòa tan 50 mg mẫu thử trong hỗn hợp gồm 2 thể tích ammonia đậm đặc R và 9 thể tích methanol R, pha loãng đến 100 mL bằng cùng hỗn hợp dung môi. / Dissolve 50 mg of the substance to be examined in a mixture of 2 volumes of concentrated ammonia R and 9 volumes of methanol R, and dilute to 100 mL with the same mixture of solvents.\n+ Dung dịch đối chiếu / Reference solution: Hòa tan 50 mg acid folic CRS trong hỗn hợp gồm 2 thể tích ammonia đậm đặc R và 9 thể tích methanol R, pha loãng đến 100 mL bằng cùng hỗn hợp dung môi. / Dissolve 50 mg of folic acid CRS in a mixture of 2 volumes of concentrated ammonia R and 9 volumes of methanol R, and dilute to 100 mL with the same mixture of solvents.\n\n- Tiêu chuẩn chấp nhận / Acceptance criteria:\n+ Tạp chất A: tối đa 0,5% / Impurity A: maximum 0.5 per cent\n+ Tạp chất D: tối đa 0,4% / Impurity D: maximum 0.4 per cent\n+ Tạp chất C, E, G: mỗi tạp chất tối đa 0,3% / Impurities C, E, G: for each impurity, maximum 0.3 per cent\n+ Tạp chất H, I: mỗi tạp chất tối đa 0,15% / Impurities H, I: for each impurity, maximum 0.15 per cent\n+ Tạp chất không xác định: mỗi tạp chất tối đa 0,10% / Unspecified impurities: for each impurity, maximum 0.10 per cent\n+ Tổng tạp chất: tối đa 1,2% / Total: maximum 1.2 per cent\n\nYêu cầu: Tạp chất A tối đa 0,5%; Tổng tạp chất tối đa 1,2% / Requirement: Impurity A max 0.5%; Total max 1.2%."
+  }
+}

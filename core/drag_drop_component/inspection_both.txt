@@ -1,0 +1,8 @@
+=== Template_Form_TCNL.docx ===
+Normal style font: .VnTime 177800
+P2: "Sửa đổi – bổ sung" | Style: Normal | Fonts: ['Times New Roman'] | Sizes: [13.0]
+Table cell: "Soạn thảo" | Fonts: ['Times New Roman'] | Sizes: [13.0]
+=== Template_Form_KNNL.docx ===
+Normal style font: .VnTime 177800
+P0: "Mã hàng (BFO): {{ ma_hang }}	" | Style: Normal | Fonts: [None, None, None, None] | Sizes: [13.0, 13.0, 13.0, 13.0]
+Table cell: "Yêu cầu kỹ thuật" | Fonts: [None] | Sizes: [13.0]

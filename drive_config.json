@@ -1,0 +1,11 @@
+{
+  "auth_type": "oauth",
+  "credentials_file": "D:\\QC_AI_Win\\client_secret_324591409873-fo6rn3ung1t6skf4qu7nbe3dbc3b2jiu.apps.googleusercontent.com.json",
+  "token_file": "D:\\QC_AI_Win\\drive_token.json",
+  "root_folder_id": "1rtxZc5IpprBa_Yt4kvwiSfQSTya1Z-uX",
+  "root_folder_name": "QC Hồ Sơ Kiểm Nghiệm",
+  "scopes": [
+    "https://www.googleapis.com/auth/drive"
+  ],
+  "drive_password_hash": "$2b$12$hCU4Pyuzgk2DWqXpVQgUDudNmo4kmTFk5hsKjYCPJioeLgXGFK8fy"
+}

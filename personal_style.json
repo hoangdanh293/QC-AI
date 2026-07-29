@@ -1,0 +1,37 @@
+{
+    "tieu_de": "Phong Cách QA/QC Cá Nhân",
+    "mo_ta_chung": "Phong cách viết hồ sơ kiểm nghiệm chuyên nghiệp, tuân thủ nghiêm ngặt cấu trúc của các dược điển lớn (USP, BP, EP, DĐVN). Đặc trưng bởi sự phân tách rõ ràng giữa căn cứ pháp lý, quy trình thực hiện và tiêu chuẩn chấp nhận. Ngôn ngữ kỹ thuật chính xác, súc tích, thường xuyên sử dụng song ngữ Việt-Anh cho phần yêu cầu kỹ thuật.",
+    "trang_thai_phan_tich": "da_phan_tich",
+    "ngay_cap_nhat": "01/07/2026 13:29",
+    "so_ho_so_da_hoc": 13,
+    "phong_cach_rut_ra": {
+        "quy_tac_viet_lach": [
+            "Quy tắc 1: Bắt buộc bắt đầu mỗi chỉ tiêu bằng cụm từ 'Theo chuyên luận [Tên chất] - [Dược điển]' hoặc 'Theo [Dược điển] - [Số chương/phụ lục]'.",
+            "Quy tắc 2: Tách biệt rõ ràng ba phần: Căn cứ (Theo...), Cách thực hiện (Tiến hành/Nội dung chi tiết) và Tiêu chuẩn (Yêu cầu).",
+            "Quy tắc 3: Sử dụng cụm từ 'Tiến hành: Kiểm tra bằng mắt thường' cho các chỉ tiêu cảm quan, độ tan.",
+            "Quy tắc 4: Các yêu cầu kỹ thuật (Yêu cầu) phải được viết ở cuối mỗi chỉ tiêu, ưu tiên trình bày song ngữ Việt/Anh.",
+            "Quy tắc 5: Khi mô tả cân mẫu, sử dụng cụm từ 'Cân chính xác khoảng [X] mg/g' thay vì chỉ ghi 'Cân [X] mg'.",
+            "Quy tắc 6: Các công thức tính toán phải được trình bày rõ ràng, có định nghĩa chi tiết cho từng ký hiệu biến số ngay bên dưới.",
+            "Quy tắc 7: Sử dụng 'Dung dịch S' làm dung dịch gốc để pha chế cho nhiều chỉ tiêu khác nhau trong cùng một hồ sơ nhằm tối ưu hóa thao tác.",
+            "Quy tắc 8: Đối với các phép thử so màu/độ đục, phải mô tả chi tiết điều kiện quan sát (ví dụ: 'nhìn theo trục dọc', 'trên nền đen', 'ánh sáng khuếch tán').",
+            "Quy tắc 9: Các chỉ tiêu định tính phức tạp phải được chia thành các nhóm (Nhóm I, Nhóm II) hoặc các mục (A, B, C) trong cùng một chỉ tiêu.",
+            "Quy tắc 10: Ghi rõ trạng thái tính toán của hàm lượng (ví dụ: 'tính theo chế phẩm khan', 'tính trên chế phẩm đã làm khô')."
+        ],
+        "cum_tu_uu_dung": {
+            "bat_dau_chi_tieu": "Theo chuyên luận [TÊN NL] - [DƯỢC ĐIỂN]",
+            "ket_luan_khong_qua": "Yêu cầu: Không quá X% / Not more than X%.",
+            "ket_luan_khoang": "Yêu cầu: Từ X đến Y / From X to Y.",
+            "kiem_tra_mat_thuong": "Tiến hành: Kiểm tra bằng mắt thường",
+            "so_sanh_mau": "không được đậm hơn dung dịch đối chiếu",
+            "phu_hop_phu": "Phổ của mẫu thử phải tương ứng với phổ của mẫu chất chuẩn",
+            "tinh_thich_hop": "Tính thích hợp hệ thống: RSD không quá X% trên Y lần đo lặp lại"
+        },
+        "cau_truc_hplc": "Chia làm 2 phần rõ rệt: A. Điều kiện sắc ký (Cột, Detector, Tốc độ dòng, Nhiệt độ, Thể tích tiêm) và B. Nội dung chi tiết (Pha động, Chuẩn bị dung dịch chuẩn/thử/trắng, Tính thích hợp hệ thống, Công thức tính).",
+        "cau_truc_tlc": "Trình bày theo trình tự: Bản mỏng $\rightarrow$ Pha động $\rightarrow$ Chuẩn bị dung dịch thử/đối chiếu $\rightarrow$ Cách chấm/Lượng chấm $\rightarrow$ Triển khai $\rightarrow$ Hiện màu/Phát hiện $\rightarrow$ Kết quả yêu cầu.",
+        "cau_truc_chuan_do": "Mô tả: Pha chế thuốc thử $\rightarrow$ Chuẩn hóa dung dịch (nếu có) $\rightarrow$ Quy trình chuẩn độ $\rightarrow$ Hệ số tương đương (1ml tương đương X mg) $\rightarrow$ Công thức tính %NT và %CFK.",
+        "cau_truc_dinh_tinh": "Gộp tất cả các phép thử định tính vào một chỉ tiêu duy nhất 'Định tính', sau đó chia nhỏ thành các mục A, B, C... (ví dụ: A. Phổ IR, B. HPLC, C. Phản ứng hóa học).",
+        "cach_viet_gioi_han": "Viết dưới dạng 'Yêu cầu: [Giá trị giới hạn tiếng Việt] / [Giá trị giới hạn tiếng Anh].' Đối với các chỉ tiêu định tính, viết 'Yêu cầu: Dương tính với... / Positive for...'.",
+        "cach_bat_dau_sop": "Bắt đầu bằng 'Tiến hành:' hoặc 'Phương pháp thử:' sau đó là các bước mô tả hành động cụ thể (Hòa tan, Cân, Thêm, Lắc, Đo).",
+        "ghi_chu_them": "Lưu ý đặc biệt về việc sử dụng ký hiệu LaTeX cho công thức toán học để đảm bảo tính chính xác. Khi dẫn chiếu dược điển, phải ghi rõ phiên bản hoặc số chương (ví dụ: EP 11.0, USP 2025)."
+    }
+}

@@ -1,0 +1,324 @@
+{
+    "dinh_luong_hplc": {
+        "ten_phuong_phap": "Sắc ký lỏng hiệu năng cao (HPLC)",
+        "tu_khoa_nhan_dien": [
+            "chromatograph",
+            "hplc",
+            "sắc ký lỏng",
+            "column",
+            "cột",
+            "detector",
+            "mobile phase",
+            "pha động"
+        ],
+        "tu_khoa_loai_tru": [
+            "gas",
+            "khí",
+            "layer",
+            "lớp mỏng"
+        ],
+        "cau_truc_dau_ra": {
+            "cot_sac_ky_hplc": "Thông số cột (tên, kích thước, hạt nhồi)",
+            "pha_dong": "Thành phần và tỷ lệ pha động",
+            "toc_do_dong_hplc": "Tốc độ dòng (ml/min)",
+            "detector_hplc": "Bước sóng UV hoặc loại detector",
+            "the_tich_tiem_hplc": "Thể tích tiêm mẫu",
+            "chuan_bi_mau_hplc": "Cách pha dung dịch thử và dung dịch chuẩn"
+        }
+    },
+    "dinh_tinh_nhom_1": {
+        "ten_phuong_phap": "Định tính nhóm 1",
+        "tu_khoa_nhan_dien": [
+            "First identification",
+            "Nhóm 1"
+        ],
+        "tu_khoa_loai_tru": [],
+        "cau_truc_dau_ra": {
+            "dinh_tinh_nhom_1": "Nếu chuyên luận có từ khóa này thì hãy điền chữ cái đại diện cho các phép thử có trong nhóm. Nếu chuyên luận không nhắc đến thì không điền. \nVí dụ: Nhóm I: A, C, D"
+        }
+    },
+    "dinh_tinh_nhom_2": {
+        "ten_phuong_phap": "Định tính nhóm 2",
+        "tu_khoa_nhan_dien": [
+            "Second identification",
+            "Nhóm 2"
+        ],
+        "tu_khoa_loai_tru": [],
+        "cau_truc_dau_ra": {
+            "dinh_tinh_nhom_2": "Nếu chuyên luận có từ khóa này thì hãy điền chữ cái đại diện cho các phép thử có trong nhóm. Nếu chuyên luận không nhắc đến thì không điền. \nVí dụ: Nhóm II: A, B, D"
+        }
+    },
+    "sac_ky_lop_mong": {
+        "ten_phuong_phap": "Sắc ký lớp mỏng (TLC)",
+        "tu_khoa_nhan_dien": [
+            "thin-layer",
+            "tlc",
+            "sắc ký lớp mỏng",
+            "plate",
+            "bản mỏng"
+        ],
+        "tu_khoa_loai_tru": [
+            "hplc",
+            "gas"
+        ],
+        "cau_truc_dau_ra": {
+            "ban_mong": "Loại bản mỏng (VD: Silica gel G)",
+            "he_dung_moi": "Thành phần hệ dung môi triển khai",
+            "phat_hien": "Cách phát hiện (VD: soi UV 254nm, phun thuốc thử)",
+            "chuan_bi_mau": "Cách pha mẫu và lượng chấm",
+            "chieu_dai_trien_khai": "Chiều dài triển khai (cm)"
+        }
+    },
+    "dinh_luong_chuan_do": {
+        "ten_phuong_phap": "Chuẩn độ (Titration)",
+        "tu_khoa_nhan_dien": [
+            "assay",
+            "định lượng",
+            "titrate",
+            "titration",
+            "chuẩn độ",
+            "indicator",
+            "chỉ thị",
+            "buret"
+        ],
+        "tu_khoa_loai_tru": [
+            "karl fischer",
+            "water",
+            "định lượng hplc",
+            "hplc"
+        ],
+        "cau_truc_dau_ra": {
+            "dung_moi_hoa_tan": "Dung môi dùng để hòa tan mẫu",
+            "nhiet_do": "Nhiệt độ tiến hành chuẩn độ (°C) (nếu có)",
+            "dung_dich_chuan": "Tên và nồng độ dung dịch chuẩn độ (VD: KOH 0.1N)",
+            "chi_thi": "Tên chất chỉ thị màu",
+            "dien_cuc_chuan_do": "Điện cực sử dụng (nếu có)",
+            "diem_ket_thuc": "Sự chuyển màu tại điểm kết thúc",
+            "None": "None"
+        },
+        "vi_du_mau": [
+            {
+                "van_ban_goc": "Dissolve 60.0 mg in water R, add 5 mL of dilute nitric acid R and dilute to 50 mL with water R. Titrate with 0.1 M silver nitrate, determining the end-point potentiometrically (2.2.20).\n1 mL of 0.1 M silver nitrate is equivalent to 7.45 mg of KCl.",
+                "ket_qua_mong_muon": "Hòa tan 60mg mẫu thử trong nước, thêm 5 ml dung dịch nitric loãng R và pha loãng đến 50ml bằng nước. Chuẩn độ với dung dịch Bạc nitrate 0.1M (CĐ). Xác định điểm cuối chuẩn độ bằng điện cực (2.2.20)\nMỗi 1 ml dung dịch Bạc nitrate 0.1M (CĐ) tương đương với 7.45 mg KCl"
+            }
+        ]
+    },
+    "karl_fischer": {
+        "ten_phuong_phap": "Hàm lượng nước (Karl Fischer)",
+        "tu_khoa_nhan_dien": [
+            "karl fischer",
+            "water",
+            "hàm lượng nước"
+        ],
+        "tu_khoa_loai_tru": [
+            "loss on drying",
+            "sấy",
+            "mất khối lượng do làm khô",
+            "mất khối lượng do sấy",
+            "mất khối lượng do nung"
+        ],
+        "cau_truc_dau_ra": {
+            "dung_moi": "Dung môi hòa tan mẫu",
+            "thuoc_thu": "Loại thuốc thử KF sử dụng",
+            "khoi_luong_mau": "Khối lượng mẫu cần lấy"
+        }
+    },
+    "say_kho": {
+        "ten_phuong_phap": "Mất khối lượng do sấy",
+        "tu_khoa_nhan_dien": [
+            "loss on drying",
+            "dry",
+            "sấy",
+            "oven",
+            "tủ sấy"
+        ],
+        "tu_khoa_loai_tru": [
+            "ash",
+            "ignition",
+            "nung",
+            "water",
+            "karl fischer",
+            "hàm lượng nước",
+            "nước",
+            "water content"
+        ],
+        "cau_truc_dau_ra": {
+            "khoi_luong_mau": "Khối lượng mẫu cần cân",
+            "nhiet_do": "Nhiệt độ sấy (°C)",
+            "thoi_gian": "Thời gian sấy (giờ) hoặc đến khi khối lượng không đổi",
+            "ap_suat": "Áp suất (nếu có yêu cầu sấy chân không)"
+        }
+    },
+    "so_mau": {
+        "ten_phuong_phap": "So màu",
+        "tu_khoa_nhan_dien": [
+            "so màu"
+        ],
+        "tu_khoa_loai_tru": [
+            "độ trong và màu sắc dung dịch",
+            "độ trong dung dịch",
+            "màu sắc dun dịch",
+            "Appearance of solution"
+        ],
+        "cau_truc_dau_ra": {
+            "khoi_luong": "Khối lượng mẫu thử và mẫu chuẩn cần chuẩn bị"
+        }
+    },
+    "nung_1": {
+        "ten_phuong_phap": "Tro sulfat",
+        "tu_khoa_nhan_dien": [
+            "ash",
+            "nung",
+            "sulfated",
+            "crucible",
+            "chén nung"
+        ],
+        "tu_khoa_loai_tru": [
+            "dry",
+            "sấy"
+        ],
+        "cau_truc_dau_ra": {
+            "khoi_luong_mau": "Khối lượng mẫu cần cân",
+            "nhiet_do_nung": "Nhiệt độ nung (°C)"
+        }
+    },
+    "nung_2": {
+        "ten_phuong_phap": "Cắn sau nung",
+        "tu_khoa_nhan_dien": [
+            "ignition",
+            "nung",
+            "crucible",
+            "chén nung"
+        ],
+        "tu_khoa_loai_tru": [
+            "ash",
+            "sulfated",
+            "dry",
+            "sấy"
+        ],
+        "cau_truc_dau_ra": {
+            "khoi_luong_mau": "Khối lượng mẫu cần cân",
+            "nhiet_do_nung": "Nhiệt độ nung (°C)"
+        }
+    },
+    "nung_3": {
+        "ten_phuong_phap": "Mất khối lượng do nung",
+        "tu_khoa_nhan_dien": [
+            "loss on ignition",
+            "nung",
+            "ignition",
+            "crucible",
+            "chén nung"
+        ],
+        "tu_khoa_loai_tru": [
+            "ash",
+            "sulfated",
+            "dry",
+            "sấy",
+            "water",
+            "karl fischer",
+            "hàm lượng nước",
+            "nước",
+            "water content"
+        ],
+        "cau_truc_dau_ra": {
+            "khoi_luong_mau": "Khối lượng mẫu cần cân",
+            "nhiet_do_nung": "Nhiệt độ nung (°C)",
+            "thoi_gian": "Thời gian nung (giờ) hoặc đến khi khối lượng không đổi"
+        }
+    },
+    "nung_4": {
+        "ten_phuong_phap": "Mất khối lượng do sấy kết hợp với nung",
+        "tu_khoa_nhan_dien": [
+            "loss on drying",
+            "nung",
+            "dry",
+            "sấy",
+            "oven",
+            "tủ sấy"
+        ],
+        "tu_khoa_loai_tru": [
+            "ash",
+            "sulfated",
+            "ignition",
+            "nung"
+        ],
+        "cau_truc_dau_ra": {
+            "khoi_luong_mau": "Khối lượng mẫu cần cân",
+            "nhiet_do_nung": [
+                "Nhiệt độ sấy (°C)",
+                "Nhiệt độ nung (°C) và thời gian nung (giờ) hoặc đến khi khối lượng không đổi"
+            ],
+            "thoi_gian": "Thời gian sấy hoặc nung (giờ) hoặc đến khi khối lượng không đổi"
+        }
+    },
+    "uv_vis": {
+        "ten_phuong_phap": "Quang phổ hấp thụ UV-Vis",
+        "tu_khoa_nhan_dien": [
+            "spectrophotomet",
+            "absorbance",
+            "quang phổ",
+            "uv",
+            "vis",
+            "nm"
+        ],
+        "tu_khoa_loai_tru": [
+            "chromatograph",
+            "hplc"
+        ],
+        "cau_truc_dau_ra": {
+            "buoc_song_uv_vis": "Bước sóng đo (nm)",
+            "dung_moi": "Dung môi pha mẫu (mẫu trắng)",
+            "chuan_bi_mau": "Cách pha dung dịch đo"
+        }
+    },
+    "phuong_phap_chung": {
+        "ten_phuong_phap": "Phương pháp hóa lý / Cảm quan chung",
+        "tu_khoa_nhan_dien": [],
+        "tu_khoa_loai_tru": [],
+        "cau_truc_dau_ra": {
+            "cach_lam_chi_tiet": "Mô tả từng bước cách tiến hành nghiệm pháp, cách pha mẫu, quan sát hiện tượng."
+        }
+    },
+    "phuong_phap_phu_luc": {
+        "ten_phuong_phap": "Phương pháp phụ lục",
+        "tu_khoa_nhan_dien": [],
+        "tu_khoa_loai_tru": [],
+        "cau_truc_dau_ra": {
+            "cach_lam_chi_tiet": "Trích xuất NGUYÊN VĂN 100% toàn bộ các bước tiến hành từ tệp Phụ lục bổ sung được cung cấp (nếu có). Không tóm tắt, không thêm bớt."
+        }
+    },
+    "gioi_han_acid_kiem": {
+        "ten_phuong_phap": "Giới hạn acid - kiềm",
+        "tu_khoa_nhan_dien": [
+            "Acidity or alkalinity",
+            "acid - kiềm",
+            "giới hạn acid - kiềm"
+        ],
+        "tu_khoa_loai_tru": [],
+        "cau_truc_dau_ra": {
+            "dung_dich_thu": "Cách chuẩn bị dung dịch thử",
+            "dung_dich_chuan_do": "Dung dịch chuẩn độ, nồng độ dung dịch chuẩn độ (Ví dụ: dung dịch NaOH 0.01 N (CĐ), dung dịch HCl 0.01 N (CĐ), v.v)"
+        }
+    },
+    "dinh_tinh": {
+        "ten_phuong_phap": "Định tính",
+        "tu_khoa_nhan_dien": [
+            "Identification",
+            "Định tính",
+            "First identification",
+            "Second identification"
+        ],
+        "tu_khoa_loai_tru": [],
+        "cau_truc_dau_ra": {
+            "dinh_tinh_nhom_1": "Nếu chuyên luận có từ \"First identification\" thì hãy điền chữ cái đại diện cho các phép thử có trong nhóm. Nếu chuyên luận không nhắc đến thì không điền (Ví dụ: Nhóm I: A, C, D)",
+            "dinh_tinh_nhom_2": "Nếu chuyên luận có từ \"Second identification\" thì hãy điền chữ cái đại diện cho các phép thử có trong nhóm. Nếu chuyên luận không nhắc đến thì không điền (Ví dụ: Nhóm II: A, B, D)",
+            "dinh_tinh_a": "Có dạng \"A.\" (VD: A. Phản ứng của Chloride)",
+            "dinh_tinh_b": "Có dạng \"B.\" (VD: B. Phản ứng của Chloride)",
+            "dinh_tinh_c": "Có dạng \"C.\" (VD: C. Phản ứng của Chloride)",
+            "dinh_tinh_d": "Có dạng \"D.\" (VD: D. Phản ứng của Chloride)",
+            "dinh_tinh_e": "Có dạng \"E.\" (VD: E. Phản ứng của Chloride)",
+            "dinh_tinh_f": "Có dạng \"F. \" (VD: A. Phản ứng của Chloride)"
+        }
+    }
+}

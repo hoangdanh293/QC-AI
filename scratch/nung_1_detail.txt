@@ -1,0 +1,18 @@
+{
+  "ten_phuong_phap": "Tro sulfat",
+  "tu_khoa_nhan_dien": [
+    "ash",
+    "nung",
+    "sulfated",
+    "crucible",
+    "chén nung"
+  ],
+  "tu_khoa_loai_tru": [
+    "dry",
+    "sấy"
+  ],
+  "cau_truc_dau_ra": {
+    "khoi_luong_mau": "Khối lượng mẫu cần cân",
+    "nhiet_do_nung": "Nhiệt độ nung (°C)"
+  }
+}

@@ -1,0 +1,59 @@
+Criteria Master Keys:
+- dinh_luong_hplc: Định lượng bằng HPLC
+- cam_quan: Cảm quan
+- do_tan: Độ tan
+- cam_quan_dung_dich: Độ trong và màu sắc dung dịch
+- acid_kiem: Giới hạn acid - kiềm
+- kim_loai_nang: Kim loại nặng
+- mat_khoi_luong_do_say: Mất khối lượng do làm khô
+- mat_khoi_luong_do_nung: Mất khối lượng do nung
+- tro_sulfat: Tro sulfat
+- can_sau_nung: Cắn sau nung
+- tap_chat_lien_quan: Tạp chất liên quan
+- dinh_luong: Định lượng
+- ham_luong_nuoc: Hàm lượng nước
+- so_mau: So màu
+- ty_trong: Tỷ trọng
+- bromide: Giới hạn Bromide
+- ferrocyanide: Giới hạn Ferrocyanide
+- goc_quay_cuc_rieng: Góc quay cực riêng
+- goc_quay_cuc: Góc quay cực
+- chi_so_acid: Chỉ số acid
+- chi_so_iodine: Chỉ số iodine
+- chi_so_peroxide: Chỉ số peroxide
+- chi_so_hydroxyl: Chỉ số hydroxyl
+- dinh_tinh: Định tính (Nhóm I, II / Chung)
+- chi_so_xa_phong_hoa: Chỉ số xà phòng hóa
+- chat_khong_xa_phong_hoa: Chất không xà phòng hóa
+- chat_khong_tan_trong_nuoc: Chất không tan trong nước
+- chat_co_the_chiet_bang_ether: Chất có thể chiết bằng ether
+- so_sanh_mau: So sánh màu
+- gioi_han_iodide: Giới hạn Iodides
+- gioi_han_nitrite: Giới hạn Nitrites
+- gioi_han_phosphate: Giới hạn Phosphates
+- gioi_han_sulfat: Giới hạn Sulfates
+- gioi_han_nhom: Giới hạn Nhôm
+- gioi_han_arsenic: Giới hạn Arsenic
+- gioi_han_magnesium_va_kim_loai_kiem_tho: Giới hạn Magnesium và kim loại kiềm thổ
+- gioi_han_Potassium: Giới hạn Potassium
+- gioi_han_sat: Giới hạn Sắt
+- gioi_han_barium: Giới hạn Barium
+- dinh_tinh_a: Định tính A
+- dinh_tinh_b: Định tính B
+- dinh_tinh_c: Định tính C
+- dinh_tinh_d: Định tính D
+- dinh_tinh_e: Định tính E
+- dinh_tinh_f: Định tính F
+- mui: Mùi
+- dung_dich_S: Dung dịch S
+- cac_tinh_chat: Các tính chất
+- gioi_han_clorid: Giới hạn Clorid
+- gioi_han_nhiem_khuan: Giới hạn nhiễm khuẩn
+- gioi_han_natri: Giới hạn Natri
+- do_pH: Độ pH
+- tap_chat_hplc: Tạp chất liên quan
+- cot_hplc: Cột
+- toc_do_dong: Tốc độ dòng
+- detector: Detector
+- the_tich_tiem: Thể tích tiêm
+- tinh_thich_hop_he_thong: Tính thích hợp hệ thống

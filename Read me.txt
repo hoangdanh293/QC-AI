@@ -1,0 +1,53 @@
+========================================================================
+     HƯỚNG DẪN CÀI ĐẶT & SỬ DỤNG HỆ THỐNG QC AI (CPC1HN)
+========================================================================
+
+Tài liệu này hướng dẫn cách thiết lập từ đầu hệ thống QC AI trên một máy tính hoàn toàn mới (chưa cài đặt bất kỳ công cụ nào).
+
+------------------------------------------------------------------------
+BƯỚC 1: CÀI ĐẶT PYTHON (NỀN TẢNG CHẠY HỆ THỐNG)
+------------------------------------------------------------------------
+1. Tải bộ cài đặt Python (Khuyên dùng phiên bản Python 3.10 hoặc 3.11):
+   - Truy cập trang chủ: https://www.python.org/downloads/
+   - Chọn tải bản cài đặt phù hợp với Windows (Windows Installer 64-bit).
+
+2. Tiến hành cài đặt:
+   - Nhấp đúp vào file cài đặt vừa tải về.
+   - [BẮT BUỘC]: Tích chọn ô "Add python.exe to PATH" (hoặc "Add Python to PATH") ở dưới cùng của cửa sổ cài đặt trước khi nhấn "Install Now".
+     (Lưu ý: Nếu không tích chọn ô này, hệ thống sẽ báo lỗi không tìm thấy lệnh python).
+
+------------------------------------------------------------------------
+BƯỚC 2: TỰ ĐỘNG CÀI ĐẶT CÁC THƯ VIỆN CẦN THIẾT
+------------------------------------------------------------------------
+Thư mục dự án đã tích hợp sẵn tập lệnh cài đặt tự động. Bạn không cần gõ lệnh thủ công.
+
+1. Tìm file "CaiDat_ThuVien.bat" trong thư mục này.
+2. Nhấp đúp chuột (Double-click) để chạy file.
+3. Cửa sổ dòng lệnh sẽ hiện ra và tự động tải các thư viện chính:
+   - streamlit (Hỗ trợ giao diện web)
+   - docxtpl, python-docx (Hỗ trợ đọc/ghi/xuất file Word)
+   - pymupdf (Hỗ trợ đọc file PDF)
+   - easyocr (Hỗ trợ nhận diện chữ viết từ hình ảnh)
+   - google-genai, openai, langchain-text-splitters (Các thư viện AI)
+4. Chờ cho tới khi màn hình hiển thị thông báo "CAI DAT HOAN TAT!" rồi nhấn phím bất kỳ để đóng cửa sổ.
+
+------------------------------------------------------------------------
+BƯỚC 3: KHỞI ĐỘNG HỆ THỐNG
+------------------------------------------------------------------------
+1. Tìm file "KhoiDong_QC_AI.bat" trong thư mục này.
+2. Nhấp đúp chuột để chạy.
+3. Hệ thống sẽ tự động khởi động Streamlit chạy ngầm (không hiện cửa sổ đen gây rối màn hình) và tự động mở trình duyệt Web tại địa chỉ:
+   http://localhost:2903
+4. Nếu hệ thống đang chạy sẵn, việc nhấp đúp tiếp vào file này chỉ đơn thuần mở thêm tab trên trình duyệt để sử dụng, không chạy đè tiến trình cũ.
+
+------------------------------------------------------------------------
+BƯỚC 4: HƯỚNG DẪN TẮT HOẶC KHỞI ĐỘNG LẠI HỆ THỐNG
+------------------------------------------------------------------------
+Do ứng dụng được chạy ngầm thông qua tiến trình ẩn (pythonw.exe), bạn có thể kiểm soát thông qua các file điều hướng tiện lợi:
+
+- KHỞI ĐỘNG LẠI (Khi cập nhật code):
+  Tạo hoặc chỉnh sửa một file bất kỳ tên là "restart.txt" tại thư mục gốc, hệ thống giám sát sẽ tự động tắt và khởi động lại dịch vụ Streamlit. (Đã được tự động hóa khi chạy lệnh cập nhật từ trợ lý).
+
+- TẮT HOÀN TOÀN HỆ THỐNG (Khi không sử dụng):
+  Tạo một file văn bản trống đặt tên là "shutdown.txt" trong thư mục gốc của chương trình. Tiến trình chạy ngầm sẽ tự động quét, dọn dẹp file này và kết thúc toàn bộ tiến trình Streamlit cũng như bộ giám sát.
+  (Hoặc có thể tắt trực tiếp thông qua Task Manager > End Task tất cả tiến trình "python.exe" / "pythonw.exe").

@@ -1,0 +1,750 @@
+{
+    "dinh_luong_hplc": {
+        "ten_hien_thi": "Định lượng bằng HPLC",
+        "tu_dien_dich": "\"Assay\" BẮT BUỘC dịch là \"Định lượng\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Định lượng bằng HPLC.",
+        "phuong_phap_ap_dung": [
+            "dinh_luong_hplc"
+        ],
+        "bang_di_kem": "bang_dinh_luong_hplc"
+    },
+    "cam_quan": {
+        "ten_hien_thi": "Cảm quan",
+        "tu_dien_dich": "\"Appearance\" BẮT BUỘC dịch là \"Cảm quan\"",
+        "loai_khai_bao": "Chỉ tiêu",
+        "cap_do_phan_muc": 2,
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mô tả hình thức, màu sắc, trạng thái.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "quy_tac_ngu_canh": {
+            "Dạy AI (Training)": "Mô tả cảm quan của mẫu như màu sắc, trạng thái (rắn, lỏng, khí), dạng chất (bột min, tinh thể, hạt,...)",
+            "COA": "Tìm mục Appearance hoặc Description. Bóc tách câu mô tả cảm quan và dịch sang song ngữ Việt-Anh",
+            "Dược điển": "Trích xuất mô tả ngoại quan tại phần Appearance trong phần Characters. Bỏ qua các chỉ dẫn thử nghiệm khác. Bóc tách câu mô tả cảm quan và dịch sang song ngữ Việt-Anh",
+            "MOA": "Tìm mục Appearance hoặc Description. Bóc tách câu mô tả cảm quan và dịch sang song ngữ Việt-Anh"
+        },
+        "vi_du_mau": [
+            {
+                "van_ban_goc": "Appearance: white or almost white, crystalline powder or colourless crystals.",
+                "ket_qua_mong_muon": "Dạng bột tinh thể màu trắng, hoặc gần trắng, hoặc tinh thể không màu. / White or almost white, crystalline powder or colourless crystals."
+            }
+        ]
+    },
+    "do_tan": {
+        "ten_hien_thi": "Độ tan",
+        "tu_dien_dich": "\"Solubility\" BẮT BUỘC dịch là \"Độ tan\"",
+        "loai_khai_bao": "Chỉ tiêu",
+        "cap_do_phan_muc": 2,
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% khả năng hòa tan trong các dung môi.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "quy_tac_ngu_canh": {
+            "Dạy AI (Training)": "Độ tan: Mô tả trạng thái hòa tan của mẫu thử trong dung môi",
+            "COA": "Tìm đến mục Solubility hoặc Độ tan. Bóc tách nội dung về khả năng tan và dịch sang song ngữ Việt - Anh",
+            "Dược điển": "Tìm đến mục Solubility hoặc Độ tan. Bóc tách nội dung về khả năng tan và dịch sang song ngữ Việt - Anh",
+            "MOA": "Tìm đến mục Solubility hoặc Độ tan. Bóc tách nội dung về khả năng tan và dịch sang song ngữ Việt - Anh"
+        },
+        "vi_du_mau": [
+            {
+                "van_ban_goc": "Solubility: freely soluble in water, practically insoluble in\ranhydrous ethanol.",
+                "ket_qua_mong_muon": "Tan tự do trong nước, thực tế không tan trong Ethanol khan. / Freely soluble in water, practically insoluble in\nanhydrous ethanol."
+            }
+        ]
+    },
+    "cam_quan_dung_dich": {
+        "ten_hien_thi": "Độ trong và màu sắc dung dịch",
+        "tu_dien_dich": "\"Appearance of solution\" BẮT BUỘC dịch là \"Độ trong và màu sắc\"",
+        "loai_khai_bao": "Cả hai",
+        "cap_do_phan_muc": 2,
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Độ trong và màu sắc.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "quy_tac_ngu_canh": {
+            "Dạy AI (Training)": "\"Appearance of solution\" - Độ trong và màu sắc: Là độ trong và màu sắc của mẫu thử so sánh với màu chuẩn và đục chuẩn theo dược điển. Làm theo các chuyên luận được đề cập đến trong chuyên luận",
+            "COA": "Tìm đến mục Appearance of solution. Lấy nội dung của mục Appearance of solution và dịch sang song ngữ Anh - Việt",
+            "Dược điển": "Tìm đến mục Appearance of solution trong phần TESTS. Lấy 100% nội dung của mục Appearance of solution và dịch sang song ngữ Anh - Việt. \nTìm đến mục Appearance trong phần TESTS đối với các mẫu là chất lỏng.  Lấy 100% nội dung của mục Appearance of solution và dịch sang song ngữ Anh - Việt.",
+            "MOA": "Tìm đến mục Appearance of solution. Lấy 100% nội dung của mục Appearance of solution và dịch sang song ngữ Anh - Việt"
+        },
+        "vi_du_mau": [
+            {
+                "van_ban_goc": "Appearance of solution. Solution S is clear (2.2.1) and colourless (2.2.2, Method II).",
+                "ket_qua_mong_muon": "Dung dịch S trong (2.2.1) và không màu (2.2.2, phương pháp 2). / Solution S is clear (2.2.1) and colourless (2.2.2, Method II)."
+            },
+            {
+                "van_ban_goc": "Appearance of solution. Solution S is clear (2.2.1) and not more intensely coloured than reference solution BY5 (2.2.2, Method II).",
+                "ket_qua_mong_muon": "Dung dịch S trong (2.2.1) và không đậm màu hơn dung dịch đối chiếu BY5 (2.2.2, phương pháp 2). / Solution S is clear (2.2.1) and not more intensely coloured than reference solution BY5 (2.2.2, Method II)."
+            },
+            {
+                "van_ban_goc": "Appearance of solution. Solution S is not more opalescent than reference suspension II (2.2.1) and not more intensely coloured than reference solution Y7 (2.2.2, Method II).",
+                "ket_qua_mong_muon": "Dung dịch S không đục hơn dung dịch huyền phù tham chiếu II (2.2.1) và không có màu đậm hơn dung dịch đối chiếu Y7 (2.2.2, Phương pháp II). / Solution S is not more opalescent than reference suspension II (2.2.1) and not more intensely coloured than reference solution Y7 (2.2.2, Method II)."
+            },
+            {
+                "van_ban_goc": "Appearance. The substance to be examined is clear (2.2.1) and colourless (2.2.2, Method II).",
+                "ket_qua_mong_muon": "Mẫu thử trong suốt (2.2.1) và không màu (2.2.2, phương pháp 2). / The substance to be examined is clear (2.2.1) and colourless (2.2.2, Method II)."
+            }
+        ],
+        "bang_di_kem": "bang_do_trong"
+    },
+    "acid_kiem": {
+        "ten_hien_thi": "Giới hạn acid - kiềm",
+        "tu_dien_dich": "\"Acid or Alkalinity\" BẮT BUỘC dịch là \"Giới hạn acid - kiềm\"",
+        "loai_khai_bao": "Chỉ tiêu",
+        "cap_do_phan_muc": 2,
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Giới hạn acid - kiềm.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung",
+            "dinh_luong_chuan_do"
+        ],
+        "quy_tac_ngu_canh": {
+            "Dạy AI (Training)": "Chỉ tiêu kiểm tra giới hạn độ axit hoặc độ kiềm của mẫu thử bằng phương pháp chuẩn độ thể tích hoặc quan sát sự đổi màu của chất chỉ thị (Indicator) với một lượng thể tích dung dịch chuẩn giới hạn cho phép.",
+            "COA": "Trích xuất yêu cầu giới hạn (Specification) dưới dạng văn bản dịch song ngữ. Nếu tài liệu ghi kết quả thực tế, trích xuất \"Đạt\" (Complies) hoặc số liệu thể tích tiêu tốn thực tế.",
+            "Dược điển": "Trích xuất toàn bộ điều kiện thực nghiệm bao gồm: Thể tích dung dịch mẫu thử, tên chất chỉ thị và thể tích chất chỉ thị thêm vào, nồng độ đương lượng và thể tích tối đa của dung dịch chuẩn (Acid/Kiềm) bắt buộc dùng để làm chuyển màu chỉ thị.",
+            "MOA": "Trích xuất toàn bộ điều kiện thực nghiệm bao gồm: Thể tích dung dịch mẫu thử, tên và thể tích chất chỉ thị thêm vào, nồng độ mol và thể tích tối đa của dung dịch chuẩn (Acid/Kiềm) bắt buộc dùng để làm chuyển màu chỉ thị. Dịch thuật theo đúng thuật ngữ chuyên ngành Dược điển."
+        },
+        "vi_du_mau": [
+            {
+                "van_ban_goc": "Acidity or alkalinity. To 50 mL of solution S add 0.1 mL of bromothymol blue solution R1. Not more than 0.5 mL of 0.01 M hydrochloric acid or 0.01 M sodium hydroxide is required to change the colour of the indicator.",
+                "ket_qua_mong_muon": "Thêm 0,1 mL dung dịch xanh bromothymol R1 vào 50 mL dung dịch S. \nTo 50 mL of solution S add 0.1 mL of bromothymol blue solution R1.\nYêu cầu: Không được dùng quá 0,5 mL dung dịch acid hydrochloric 0,01 M hoặc sodium hydroxide 0,01 M để làm thay đổi màu của chất chỉ thị.\nNot more than 0.5 mL of 0.01 M hydrochloric acid or 0.01 M sodium hydroxide is required to change the colour of the indicator."
+            }
+        ],
+        "bang_di_kem": "bang_acid_kiem"
+    },
+    "kim_loai_nang": {
+        "ten_hien_thi": "Kim loại nặng",
+        "tu_dien_dich": "\"Heavy metals\" BẮT BUỘC dịch là \"Kim loại nặng\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Kim loại nặng.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "bang_di_kem": "bang_kim_loai_nang"
+    },
+    "mat_khoi_luong_do_say": {
+        "ten_hien_thi": "Mất khối lượng do làm khô",
+        "tu_dien_dich": "\"Loss on drying\" BẮT BUỘC dịch là \"Mất khối lượng do sấy\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Mất khối lượng do sấy.",
+        "phuong_phap_ap_dung": [
+            "say_kho",
+            "nung_4"
+        ],
+        "bang_di_kem": "bang_mat_khoi_luong_do_say"
+    },
+    "mat_khoi_luong_do_nung": {
+        "ten_hien_thi": "Mất khối lượng do nung",
+        "tu_dien_dich": "\"Loss on ignition\" BẮT BUỘC dịch là \"Mất khối lượng do nung\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Mất khối lượng do nung.",
+        "phuong_phap_ap_dung": [
+            "nung_3"
+        ],
+        "bang_di_kem": "bang_mat_khoi_luong_do_nung"
+    },
+    "tro_sulfat": {
+        "ten_hien_thi": "Tro sulfat",
+        "tu_dien_dich": "\"Sulfated ash\" BẮT BUỘC dịch là \"Tro sulfat\"",
+        "loai_khai_bao": "Chỉ tiêu",
+        "cap_do_phan_muc": 2,
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Tro sulfat.",
+        "phuong_phap_ap_dung": [
+            "nung_1"
+        ],
+        "quy_tac_ngu_canh": {
+            "Dạy AI (Training)": "",
+            "COA": "",
+            "Dược điển": "Tìm chỉ tiêu \"Sulfated ash\" dịch là \"Tro sulfate\". Trích xuất nội dung của chỉ tiêu. Dịch song ngữ Việt - Anh",
+            "MOA": ""
+        },
+        "vi_du_mau": [],
+        "bang_di_kem": "bang_tro_sulfat"
+    },
+    "can_sau_nung": {
+        "ten_hien_thi": "Cắn sau nung",
+        "tu_dien_dich": "\"Residue on ignition\" BẮT BUỘC dịch là \"Cân sau nung\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Cắn sau nung.",
+        "phuong_phap_ap_dung": [
+            "nung_2"
+        ],
+        "bang_di_kem": "bang_can_sau_nung"
+    },
+    "tap_chat_lien_quan": {
+        "ten_hien_thi": "Tạp chất liên quan",
+        "tu_dien_dich": "\"Related substances\" BẮT BUỘC dịch là \"Tạp chất liên quan\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Tạp chất liên quan.",
+        "phuong_phap_ap_dung": [
+            "hplc",
+            "sac_ky_lop_mong",
+            "uv_vis",
+            "phuong_phap_chung",
+            "sac_ky_lop_mong",
+            "dien_di_mao_quan"
+        ],
+        "bang_di_kem": "bang_tap_chat_hplc"
+    },
+    "dinh_luong": {
+        "ten_hien_thi": "Định lượng",
+        "tu_dien_dich": "\"Assay\" BẮT BUỘC dịch là \"Định lượng\"",
+        "loai_khai_bao": "Chỉ tiêu",
+        "cap_do_phan_muc": 2,
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Định lượng.",
+        "phuong_phap_ap_dung": [
+            "uv_vis",
+            "phuong_phap_chung"
+        ],
+        "quy_tac_ngu_canh": {
+            "Dạy AI (Training)": "",
+            "COA": "",
+            "Dược điển": "",
+            "MOA": ""
+        },
+        "vi_du_mau": [
+            {
+                "van_ban_goc": "ASSAY\nDissolve 60.0 mg in water R, add 5 mL of dilute nitric acid R\nand dilute to 50 mL with water R. Titrate with 0.1 M silver\nnitrate, determining the end-point potentiometrically (2.2.20).\n1 mL of 0.1 M silver nitrate is equivalent to 7.45 mg of KCl.",
+                "ket_qua_mong_muon": "ĐỊNH LƯỢNG / ASSAY\nHòa tan 60,0 mg trong nước R, thêm 5 mL acid nitric loãng R và pha loãng thành 50 mL bằng nước R. / Dissolve 60.0 mg in water R, add 5 mL of dilute nitric acid R and dilute to 50 mL with water R.\nChuẩn độ bằng bạc nitrate 0,1 M, xác định điểm kết thúc bằng phương pháp đo điện thế (2.2.20). / Titrate with 0.1 M silver nitrate, determining the end-point potentiometrically (2.2.20).\nMỗi 1 mL bạc nitrate 0,1 M tương đương với 7,45 mg KCl. / 1 mL of 0.1 M silver nitrate is equivalent to 7.45 mg of KCl."
+            }
+        ],
+        "bang_di_kem": "bang_dinh_luong"
+    },
+    "ham_luong_nuoc": {
+        "ten_hien_thi": "Hàm lượng nước",
+        "tu_dien_dich": "\"Water\" BẮT BUỘC dịch là \"Hàm lượng nước\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Hàm lượng nước.",
+        "phuong_phap_ap_dung": [
+            "karl_fischer",
+            "chuan_do"
+        ],
+        "bang_di_kem": "bang_ham_luong_nuoc"
+    },
+    "so_mau": {
+        "ten_hien_thi": "So màu",
+        "tu_dien_dich": "",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% cách làm chi tiết của chỉ tiêu so màu. Phương pháp này thường được đề cập đến trong Tiêu chuẩn nguyên liệu",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "bang_di_kem": "bang_so_mau"
+    },
+    "ty_trong": {
+        "ten_hien_thi": "Tỷ trọng",
+        "tu_dien_dich": "\"Specific gravity\" BẮT BUỘC dịch là \"Tỷ trọng\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Tỷ trọng.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "bang_di_kem": "bang_ty_trong"
+    },
+    "bromide": {
+        "ten_hien_thi": "Giới hạn Bromide",
+        "tu_dien_dich": "\"Bromides\" BẮT BUỘC dịch là \"Giới hạn Bromide\"",
+        "loai_khai_bao": "Chỉ tiêu",
+        "cap_do_phan_muc": 2,
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Giới hạn Bromide.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "quy_tac_ngu_canh": {
+            "Dạy AI (Training)": "",
+            "COA": "Tìm đến mục Bromide hoặc Bromides. Trích xuất nội dung của chỉ tiêu. Dịch song ngữ Việt - Anh",
+            "Dược điển": "Tìm đến mục Bromide hoặc Bromides trong phần TESTS.  Trích xuất 100% nội dung của chỉ tiêu. Dịch song ngữ Việt - Anh",
+            "MOA": "Tìm đến mục Bromide hoặc Bromides.  Trích xuất 100% nội dung của chỉ tiêu. Dịch song ngữ Việt - Anh"
+        },
+        "vi_du_mau": [
+            {
+                "van_ban_goc": "Bromides: maximum 0.1 per cent.\nDilute 1.0 mL of solution S to 50 mL with water R. To 5.0 mL of the solution add 2.0 mL of phenol red solution R2 and 1.0 mL of chloramine solution R1 and mix immediately. After exactly 2 min add 0.15 mL of 0.1 M sodium thiosulfate, mix and dilute to 10.0 mL with water R. The absorbance (2.2.25) of the solution measured at 590 nm, using water R as the compensation liquid, is not greater than that of a standard prepared at the same time and in the same manner using 5 mL of a 3.0 mg/L solution of potassium bromide R.",
+                "ket_qua_mong_muon": "Dung dịch thử: Pha loãng 1,0 ml dung dịch S thành 50 ml bằng nước. Lấy 5,0 ml dung dịch này thêm 2,0 ml dung dịch đỏ phenol (TT2) và 1,0 ml dung dịch chloramine T 0,01 % (TT), trộn đều ngay. Sau đúng 2 phút, thêm 0,15 ml dung dịch sodium thiosulfate 0,1M (TT), trộn đều và pha loãng thành 10,0 ml bằng nước. \nTest solution: Dilute 1.0 mL of solution S to 50 mL with water. To 5.0 mL of this solution add 2.0 mL of phenol red solution R2 and 1.0 mL of chloramine T solution R 0.01 per cent and mix immediately. After exactly 2 min, add 0.15 mL of 0.1 M sodium thiosulfate, mix and dilute to 10.0 mL with water.\nDung dịch đối chiếu: Lấy 5,0 ml dung dịch kali bromide 3,0 mg/l, thêm 2,0 ml dung dịch đỏ phenol (TT2) và 1,0 ml dung dịch chloramine 0,01% (TT), trộn đều ngay. Sau đúng 2 phút, thêm 0,15 ml dung dịch sodium thiosulfate 0,1 M (TT), trộn đều và pha loãng thành 10,0 ml bằng nước. \nReference solution: To 5.0 mL of potassium bromide solution (3 mg/L Br) add 2.0 mL of phenol red solution R2 and 1.0 mL of chloramine T solution R 0.01 per cent and mix immediately. After exactly 2 min, add 0.15 mL of 0.1 M sodium thiosulfate, mix and dilute to 10.0 mL with water.\nYêu cầu: Đo độ hấp thụ của dung dịch trên ở bước sóng 590 nm, dùng nước làm mẫu trắng. Độ hấp thụ của dung dịch thử không được lớn hơn độ hấp thụ của dung dịch đối chiếu (Không quá 0,1%).\nRequirement: Measure the absorbance of the solutions at 590 nm, using water as the compensation liquid. The absorbance of the test solution is not greater than that of the reference solution (Not more than 0.1 per cent)."
+            }
+        ],
+        "bang_di_kem": "bang_bromide"
+    },
+    "ferrocyanide": {
+        "ten_hien_thi": "Giới hạn Ferrocyanide",
+        "tu_dien_dich": "\"Ferrocyanides\" BẮT BUỘC dịch là \"Giới hạn Ferrocyanide\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Giới hạn Ferrocyanide.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "bang_di_kem": "bang_ferrocyanide"
+    },
+    "goc_quay_cuc_rieng": {
+        "ten_hien_thi": "Góc quay cực riêng",
+        "tu_dien_dich": "\"Optical rotation\" BẮT BUỘC dịch là \"Góc quay cực riêng\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Góc quay cực riêng.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "bang_di_kem": "bang_goc_quay_cuc_rieng"
+    },
+    "goc_quay_cuc": {
+        "ten_hien_thi": "Góc quay cực",
+        "tu_dien_dich": "\"Rotation\" BẮT BUỘC dịch là \"Góc quay cực\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Góc quay cực.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "bang_di_kem": "bang_goc_quay_cuc"
+    },
+    "chi_so_acid": {
+        "ten_hien_thi": "Chỉ số acid",
+        "tu_dien_dich": "\"Acid value\" BẮT BUỘC dịch là \"Chỉ số acid\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Chỉ số acid.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_phu_luc",
+            "dinh_luong_chuan_do"
+        ],
+        "bang_di_kem": "bang_chi_so_acid"
+    },
+    "chi_so_iodine": {
+        "ten_hien_thi": "Chỉ số iodine",
+        "tu_dien_dich": "\"Iodine value\" BẮT BUỘC dịch là \"Chỉ số iodine\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Chỉ số iod.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_phu_luc",
+            "dinh_luong_chuan_do"
+        ],
+        "bang_di_kem": "bang_chi_so_iodine"
+    },
+    "chi_so_peroxide": {
+        "ten_hien_thi": "Chỉ số peroxide",
+        "tu_dien_dich": "\"Peroxide value\" BẮT BUỘC dịch là \"Chỉ số peroxide\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Chỉ số peroxide.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_phu_luc",
+            "dinh_luong_chuan_do"
+        ],
+        "bang_di_kem": "bang_chi_so_peroxide"
+    },
+    "chi_so_hydroxyl": {
+        "ten_hien_thi": "Chỉ số hydroxyl",
+        "tu_dien_dich": "\"Hydroxyl value\" BẮT BUỘC dịch là \"Chỉ số hydroxyl\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Chỉ số hydroxyl.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_phu_luc",
+            "dinh_luong_chuan_do"
+        ],
+        "bang_di_kem": "bang_chi_so_hydroxyl"
+    },
+    "dinh_tinh": {
+        "ten_hien_thi": "Định tính (Nhóm I, II / Chung)",
+        "tu_dien_dich": "Chỉ lấy thông tin về First identification, Second identification (nếu có).",
+        "lenh_ai_trich_xuat": "NẾU TÀI LIỆU CÓ ĐỀ CẬP ĐẾN NHÓM ĐỊNH TÍNH I, II (VD: First identification, Second identification): COPY NGUYÊN VĂN nội dung đó. NẾU KHÔNG CÓ: Bỏ trống hoàn toàn.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ]
+    },
+    "chi_so_xa_phong_hoa": {
+        "ten_hien_thi": "Chỉ số xà phòng hóa",
+        "tu_dien_dich": "\"Saponification value\" BẮT BUỘC dịch là \"Chỉ số xà phòng hóa\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Chỉ số xà phòng hóa.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_phu_luc",
+            "dinh_luong_chuan_do"
+        ],
+        "bang_di_kem": "bang_chi_so_xa_phong_hoa"
+    },
+    "chat_khong_xa_phong_hoa": {
+        "ten_hien_thi": "Chất không xà phòng hóa",
+        "tu_dien_dich": "\"Unsaponifiable matter\" BẮT BUỘC dịch là \"Chất không xà phòng hóa\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Chất không xà phòng hóa.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_phu_luc",
+            "phuong_phap_chung"
+        ],
+        "bang_di_kem": "bang_chat_khong_xa_phong_hoa"
+    },
+    "chat_khong_tan_trong_nuoc": {
+        "ten_hien_thi": "Chất không tan trong nước",
+        "tu_dien_dich": "\"Insoluble matter\" BẮT BUỘC dịch là \"Chất không tan trong nước\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Chất không tan trong nước.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "bang_di_kem": "bang_chat_khong_tan_trong_nuoc"
+    },
+    "chat_co_the_chiet_bang_ether": {
+        "ten_hien_thi": "Chất có thể chiết bằng ether",
+        "tu_dien_dich": "\"Ether extractable matter\" BẮT BUỘC dịch là \"Chất có thể chiết bằng ether\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Chất có thể chiết bằng ether.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "bang_di_kem": "bang_chat_co_the_chiet_bang_ether"
+    },
+    "so_sanh_mau": {
+        "ten_hien_thi": "So sánh màu",
+        "tu_dien_dich": "\"Comparison of samples\" BẮT BUỘC dịch là \"So sánh màu\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về So sánh màu.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "bang_di_kem": "bang_so_sanh_mau"
+    },
+    "gioi_han_iodide": {
+        "ten_hien_thi": "Giới hạn Iodides",
+        "tu_dien_dich": "\"Iodines\" BẮT BUỘC dịch là \"Giới hạn Iodides\"",
+        "loai_khai_bao": "Chỉ tiêu",
+        "cap_do_phan_muc": 2,
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Giới hạn Iodides",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "quy_tac_ngu_canh": {
+            "Dạy AI (Training)": "",
+            "COA": "Tìm mục Iodide hoặc Iodides. Trích xuất nội dung giới hạn, phương pháp. Dịch song ngữ Việt - Anh",
+            "Dược điển": "Tìm mục Iodides trong phần TESTS. Lấy 100% nội dung của chỉ tiêu và dịch song ngữ Việt - Anh",
+            "MOA": "Tìm mục Iodides. Lấy 100% nội dung của chỉ tiêu và dịch song ngữ Việt - Anh"
+        },
+        "vi_du_mau": [
+            {
+                "van_ban_goc": "Iodides. Moisten 5 g by the dropwise addition of a freshly\nprepared mixture of 0.15 mL of sodium nitrite solution R, 2 mL\nof 0.5 M sulfuric acid, 25 mL of iodide-free starch solution R\nand 25 mL of water R. After 5 min, examine in daylight. The\nsubstance shows no blue colour.",
+                "ket_qua_mong_muon": "Iodid / Iodides.\nLàm ẩm 5 g bằng cách thêm từng giọt hỗn hợp mới pha gồm 0,15 mL dung dịch natri nitrit R, 2 mL acid sulfuric 0,5 M, 25 mL dung dịch hồ tinh bột không chứa iodid R và 25 mL nước R. / Moisten 5 g by the dropwise addition of a freshly prepared mixture of 0.15 mL of sodium nitrite solution R, 2 mL of 0.5 M sulfuric acid, 25 mL of iodide-free starch solution R and 25 mL of water R.\nTiêu chuẩn chấp nhận: Sau 5 phút, quan sát trong ánh sáng ban ngày. Chất thử không có màu xanh lam. \nAcceptance criteria: After 5 min, examine in daylight. The substance shows no blue colour."
+            },
+            {
+                "van_ban_goc": "Iodide\nStandard stock solution: 1.64 mg/mL of potassium iodide in water\nStandard solution: Dilute 1.0 mL of Standard stock solution with water to 25 mL. Dilute 2.0 mL of this solution with water to 8 mL. Add 1 mL\neach of chloroform and diluted hydrochloric acid, then add 2 drops of a chloramine T solution (0.1 in 100), and shake gently.\nSample solution: Dissolve 2 g of Potassium Chloride in 8 mL of water. Add 1 mL each of chloroform and diluted hydrochloric acid, then add 2\ndrops of a chloramine T solution (0.1 in 100), and shake gently.\nAcceptance criteria: The violet color of the chloroform layer is not darker than that of a concomitantly prepared Standard solution (NMT\n0.005%).",
+                "ket_qua_mong_muon": "Iodid / Iodide\nDung dịch chuẩn gốc: 1,64 mg/mL kali iodid trong nước / Standard stock solution: 1.64 mg/mL of potassium iodide in water\nDung dịch chuẩn: Pha loãng 1,0 mL dung dịch chuẩn gốc với nước thành 25 mL. / Standard solution: Dilute 1.0 mL of Standard stock solution with water to 25 mL.\nPha loãng 2,0 mL dung dịch này với nước thành 8 mL. / Dilute 2.0 mL of this solution with water to 8 mL.\nThêm mỗi loại 1 mL chloroform và acid hydrochloric loãng, sau đó thêm 2 giọt dung dịch chloramine T (0,1 trong 100), rồi lắc nhẹ. / Add 1 mL each of chloroform and diluted hydrochloric acid, then add 2 drops of a chloramine T solution (0.1 in 100), and shake gently.\nDung dịch thử: Hòa tan 2 g Kali clorid trong 8 mL nước. / Sample solution: Dissolve 2 g of Potassium Chloride in 8 mL of water.\nThêm mỗi loại 1 mL chloroform và acid hydrochloric loãng, sau đó thêm 2 giọt dung dịch chloramine T (0,1 trong 100), rồi lắc nhẹ. / Add 1 mL each of chloroform and diluted hydrochloric acid, then add 2 drops of a chloramine T solution (0.1 in 100), and shake gently.\nTiêu chuẩn chấp nhận: Màu tím của lớp chloroform không đậm hơn màu của dung dịch chuẩn được chuẩn bị đồng thời (không quá 0,005%). / Acceptance criteria: The violet color of the chloroform layer is not darker than that of a concomitantly prepared Standard solution (NMT 0.005%)."
+            },
+            {
+                "van_ban_goc": "None",
+                "ket_qua_mong_muon": "None"
+            }
+        ]
+    },
+    "gioi_han_nitrite": {
+        "ten_hien_thi": "Giới hạn Nitrites",
+        "tu_dien_dich": "\"Nitrites\" BẮT BUỘC dịch là \"Giới hạn Nitrites\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Giới hạn Nitrites",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ]
+    },
+    "gioi_han_phosphate": {
+        "ten_hien_thi": "Giới hạn Phosphates",
+        "tu_dien_dich": "\"Phosphates\" BẮT BUỘC dịch là \"Giới hạn Phosphates\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Giới hạn Phosphates",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ]
+    },
+    "gioi_han_sulfat": {
+        "ten_hien_thi": "Giới hạn Sulfates",
+        "tu_dien_dich": "\"Sulfates\" BẮT BUỘC dịch là \"Giới hạn Sulfates\"",
+        "loai_khai_bao": "Chỉ tiêu",
+        "cap_do_phan_muc": 2,
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Giới hạn Sulfates",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "quy_tac_ngu_canh": {
+            "Dạy AI (Training)": "",
+            "COA": "",
+            "Dược điển": "",
+            "MOA": ""
+        },
+        "vi_du_mau": [
+            {
+                "van_ban_goc": "Sulfates (2.4.13): maximum 300 ppm.\nDilute 5 mL of solution S to 15 mL with distilled water R.",
+                "ket_qua_mong_muon": "Sulfat (2.4.13): tối đa 300 ppm. / Sulfates (2.4.13): maximum 300 ppm.\nPha loãng 5 mL dung dịch S thành 15 mL bằng nước cất R. / Dilute 5 mL of solution S to 15 mL with distilled water R."
+            }
+        ]
+    },
+    "gioi_han_nhom": {
+        "ten_hien_thi": "Giới hạn Nhôm",
+        "tu_dien_dich": "\"Aluminium\" BẮT BUỘC dịch là \"Giới hạn Nhôm\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Giới hạn Nhôm",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ]
+    },
+    "gioi_han_arsenic": {
+        "ten_hien_thi": "Giới hạn Arsenic",
+        "tu_dien_dich": "\"Arsenic\" BẮT BUỘC dịch là \"Giới hạn Arsenic\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Giới hạn Arsenic",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ]
+    },
+    "gioi_han_magnesium_va_kim_loai_kiem_tho": {
+        "ten_hien_thi": "Giới hạn Magnesium và kim loại kiềm thổ",
+        "tu_dien_dich": "\"Magnesium and alkaline-earth metals\" BẮT BUỘC dịch là \"Giới hạn Magnesium và kim loại kiềm thổ\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Giới hạn Magnesium và kim loại kiềm thổ",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ]
+    },
+    "gioi_han_Potassium": {
+        "ten_hien_thi": "Giới hạn Potassium",
+        "tu_dien_dich": "\"Potassium\" BẮT BUỘC dịch là \"Giới hạn Potassium\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Giới hạn Potassium",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ]
+    },
+    "gioi_han_sat": {
+        "ten_hien_thi": "Giới hạn Sắt",
+        "tu_dien_dich": "\"Iron\" BẮT BUỘC dịch là \"Giới hạn Sắt\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Giới hạn Sắt.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ]
+    },
+    "gioi_han_barium": {
+        "ten_hien_thi": "Giới hạn Barium",
+        "tu_dien_dich": "\"Barium\" BẮT BUỘC dịch là \"Giới hạn Barium\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Giới hạn Barium.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ]
+    },
+    "dinh_tinh_a": {
+        "ten_hien_thi": "Định tính A",
+        "tu_dien_dich": "\"Identification A\" dịch là \"Định tính A\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN nội dung phép thử Định tính A. NẾU KHÔNG CÓ: Bỏ trống.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "bang_di_kem": "bang_dinh_tinh_a"
+    },
+    "dinh_tinh_b": {
+        "ten_hien_thi": "Định tính B",
+        "tu_dien_dich": "\"Identification B\" dịch là \"Định tính B\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN nội dung phép thử Định tính B. NẾU KHÔNG CÓ: Bỏ trống.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "bang_di_kem": "bang_dinh_tinh_b"
+    },
+    "dinh_tinh_c": {
+        "ten_hien_thi": "Định tính C",
+        "tu_dien_dich": "\"Identification C\" dịch là \"Định tính C\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN nội dung phép thử Định tính C. NẾU KHÔNG CÓ: Bỏ trống.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "bang_di_kem": "bang_dinh_tinh_c"
+    },
+    "dinh_tinh_d": {
+        "ten_hien_thi": "Định tính D",
+        "tu_dien_dich": "\"Identification D\" dịch là \"Định tính D\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN nội dung phép thử Định tính D. NẾU KHÔNG CÓ: Bỏ trống.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "bang_di_kem": "bang_dinh_tinh_d"
+    },
+    "dinh_tinh_e": {
+        "ten_hien_thi": "Định tính E",
+        "tu_dien_dich": "\"Identification E\" dịch là \"Định tính E\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN nội dung phép thử Định tính E. NẾU KHÔNG CÓ: Bỏ trống.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "bang_di_kem": "bang_dinh_tinh_e"
+    },
+    "dinh_tinh_f": {
+        "ten_hien_thi": "Định tính F",
+        "tu_dien_dich": "\"Identification F\" dịch là \"Định tính F\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN nội dung phép thử Định tính F. NẾU KHÔNG CÓ: Bỏ trống.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "bang_di_kem": "bang_dinh_tinh_f"
+    },
+    "mui": {
+        "ten_hien_thi": "Mùi",
+        "tu_dien_dich": "\"odor\" bắt buộc dịch là \"Mùi\"",
+        "lenh_ai_trich_xuat": "Copy nguyên văn 100% mọi nội dung về Mùi",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ]
+    },
+    "dung_dich_S": {
+        "ten_hien_thi": "Dung dịch S",
+        "tu_dien_dich": "\"Solution S\" bắt buộc dịch là \"Dung dịch S\"",
+        "loai_khai_bao": "Định nghĩa",
+        "cap_do_phan_muc": 2,
+        "lenh_ai_trich_xuat": "Copy nguyên văn 100% mọi nội dung về Dung dịch S",
+        "phuong_phap_ap_dung": [],
+        "quy_tac_ngu_canh": {
+            "Dạy AI (Training)": "",
+            "COA": "",
+            "Dược điển": "Tìm đến mục Solution S hoặc Dung dịch S.  Lấy 100% nội dung về cách pha của dung dịch S",
+            "MOA": "Tìm đến mục Solution S hoặc Dung dịch S.  Lấy 100% nội dung về cách pha của dung dịch S"
+        },
+        "vi_du_mau": [
+            {
+                "van_ban_goc": "Solution S. Dissolve 2.5 g in carbon dioxide-free water R and dilute to 50 mL with the same solvent.",
+                "ket_qua_mong_muon": "Dung dịch S: Hòa tan 2.5g mẫu thử trong vừa đủ 50,0 ml nước không CO2. / Solution S. Dissolve 2.5 g in carbon dioxide-free water R and dilute to 50 mL with the same solvent."
+            }
+        ]
+    },
+    "cac_tinh_chat": {
+        "ten_hien_thi": "Các tính chất",
+        "tu_dien_dich": "\"Characters\" bắt buộc dịch là \"Các tính chất\"",
+        "loai_khai_bao": "Định nghĩa",
+        "cap_do_phan_muc": 1,
+        "lenh_ai_trich_xuat": "\"Characters\" bắt buộc dịch là \"Các tính chất\"",
+        "phuong_phap_ap_dung": [],
+        "quy_tac_ngu_canh": {
+            "Dạy AI (Training)": "\"Các tính chất\" là nhóm lớn chứa các tính chất của mẫu thử như: Cảm quan, Độ tan",
+            "COA": "",
+            "Dược điển": "",
+            "MOA": ""
+        }
+    },
+    "gioi_han_clorid": {
+        "ten_hien_thi": "Giới hạn Clorid",
+        "tu_dien_dich": "\"Chlorides\" hoặc \"Chloride\" BẮT BUỘC dịch là \"Giới hạn Clorid\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Giới hạn Clorid.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ]
+    },
+    "gioi_han_nhiem_khuan": {
+        "ten_hien_thi": "Giới hạn nhiễm khuẩn",
+        "tu_dien_dich": "\"Microbial limits\" hoặc \"Microbiological examination\" BẮT BUỘC dịch là \"Giới hạn nhiễm khuẩn\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Giới hạn nhiễm khuẩn.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ]
+    },
+    "gioi_han_natri": {
+        "ten_hien_thi": "Giới hạn Natri",
+        "tu_dien_dich": "\"Sodium\" BẮT BUỘC dịch là \"Giới hạn Natri\"",
+        "lenh_ai_trich_xuat": "COPY NGUYÊN VĂN 100% mọi nội dung về Giới hạn Natri.",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ]
+    },
+    "do_pH": {
+        "ten_hien_thi": "Độ pH",
+        "tu_dien_dich": "\"pH\" BẮT BUỘC dịch là \"Độ pH\"",
+        "loai_khai_bao": "Cả hai",
+        "cap_do_phan_muc": 2,
+        "lenh_ai_trich_xuat": "Copy 100% nguyên văn mọi nội dung về Độ pH",
+        "phuong_phap_ap_dung": [
+            "phuong_phap_chung"
+        ],
+        "quy_tac_ngu_canh": {
+            "Dạy AI (Training)": "",
+            "COA": "",
+            "Dược điển": "",
+            "MOA": ""
+        },
+        "vi_du_mau": []
+    },
+    "tap_chat_hplc": {
+        "ten_hien_thi": "Tạp chất liên quan",
+        "tu_dien_dich": "\"Related substances\" bắt buộc dịch là \" Tạp chất liên quan\"",
+        "loai_khai_bao": "Chỉ tiêu",
+        "cap_do_phan_muc": 2,
+        "lenh_ai_trich_xuat": "Copy nguyên văn 100% mội nội dung về Tạp chất liên quan",
+        "phuong_phap_ap_dung": [
+            "dinh_luong_hplc"
+        ],
+        "quy_tac_ngu_canh": {
+            "Dạy AI (Training)": "",
+            "COA": "",
+            "Dược điển": "",
+            "MOA": ""
+        },
+        "vi_du_mau": []
+    },
+    "cot_hplc": {
+        "ten_hien_thi": "Cột",
+        "tu_dien_dich": "\"Column\" bắt buộc dịch là \"Cột\"",
+        "loai_khai_bao": "Định nghĩa",
+        "cap_do_phan_muc": 3,
+        "lenh_ai_trich_xuat": "Copy nguyên văn 100%  mọi nội dung về Cột. Bao gồm: Size, Ø, stationary phase",
+        "phuong_phap_ap_dung": [],
+        "quy_tac_ngu_canh": {
+            "Dạy AI (Training)": "",
+            "COA": "",
+            "Dược điển": "",
+            "MOA": ""
+        },
+        "vi_du_mau": [
+            {
+                "van_ban_goc": "Column:\n– size: l = 0.25 m, Ø = 4.6 mm;\n– stationary phase: end-capped octadecylsilyl silica gel for\nchromatography with embedded polar groups R (5 μm)",
+                "ket_qua_mong_muon": "Cột: C18 (250 mm x 4.6 mm x 5µm)"
+            }
+        ]
+    },
+    "toc_do_dong": {
+        "ten_hien_thi": "Tốc độ dòng",
+        "tu_dien_dich": "\"Flow rate\" bắt buộc dịch là \"Tốc độ dòng\"",
+        "loai_khai_bao": "Định nghĩa",
+        "cap_do_phan_muc": 3,
+        "lenh_ai_trich_xuat": "Copy nguyên văn 100% mọi dung về Tốc độ dòng",
+        "phuong_phap_ap_dung": [],
+        "quy_tac_ngu_canh": {
+            "Dạy AI (Training)": "",
+            "COA": "",
+            "Dược điển": "",
+            "MOA": ""
+        },
+        "vi_du_mau": [
+            {
+                "van_ban_goc": "Flow rate: 1.0 mL/min.",
+                "ket_qua_mong_muon": "Tốc độ dòng: 1.0 ml/phút"
+            }
+        ]
+    },
+    "detector": {
+        "ten_hien_thi": "Detector",
+        "tu_dien_dich": "\"Detection\" Bắt buộc dịch là \"Detector\"",
+        "loai_khai_bao": "Định nghĩa",
+        "cap_do_phan_muc": 3,
+        "lenh_ai_trich_xuat": "Copy nguyên văn 100% mọi nội dung về Detector",
+        "phuong_phap_ap_dung": [],
+        "quy_tac_ngu_canh": {
+            "Dạy AI (Training)": "",
+            "COA": "",
+            "Dược điển": "",
+            "MOA": ""
+        },
+        "vi_du_mau": [
+            {
+                "van_ban_goc": "Detection: spectrophotometer at 220 nm.",
+                "ket_qua_mong_muon": "Detector: UV 220 nm"
+            }
+        ]
+    },
+    "the_tich_tiem": {
+        "ten_hien_thi": "Thể tích tiêm",
+        "tu_dien_dich": "\"Injection\" bắt buộc dịch là \"Thể tích tiêm\"",
+        "loai_khai_bao": "Định nghĩa",
+        "cap_do_phan_muc": 3,
+        "lenh_ai_trich_xuat": "Copy nguyên văn 100% mọi nội dung về Thể tích tiêm",
+        "phuong_phap_ap_dung": [],
+        "quy_tac_ngu_canh": {
+            "Dạy AI (Training)": "",
+            "COA": "",
+            "Dược điển": "",
+            "MOA": ""
+        },
+        "vi_du_mau": [
+            {
+                "van_ban_goc": "Injection: 10 μL.",
+                "ket_qua_mong_muon": "Thể tích tiêm: 10µl"
+            }
+        ]
+    },
+    "tinh_thich_hop_he_thong": {
+        "ten_hien_thi": "Tính thích hợp hệ thống",
+        "tu_dien_dich": "\"System Suitability\" bắt buộc dịch là \" Tính thích hợp hệ thống\"",
+        "loai_khai_bao": "Định nghĩa",
+        "cap_do_phan_muc": 3,
+        "lenh_ai_trich_xuat": "Copy nguyên văn 100% mọi nội dung  về Tính thích hợp hệ thống",
+        "phuong_phap_ap_dung": [],
+        "quy_tac_ngu_canh": {
+            "Dạy AI (Training)": "",
+            "COA": "",
+            "Dược điển": "",
+            "MOA": ""
+        },
+        "vi_du_mau": [
+            {
+                "van_ban_goc": "System suitability: reference solution (b):",
+                "ket_qua_mong_muon": "Tính thích hợp hệ thống: Dung dịch đối chiếu (b)"
+            }
+        ]
+    }
+}
