@@ -5,6 +5,28 @@ from google.genai import types
 import openai
 from core.key_manager import get_active_keys
 
+GOOGLE_MODEL_ALIASES = {
+    "gemini-3.1-pro": "gemini-3.1-pro-preview",
+    "gemini-3.5-pro": "gemini-3.1-pro-preview",
+    "gemini-1.5-pro": "gemini-2.5-pro",
+    "gemini-1.5-flash": "gemini-2.5-flash",
+    "gemini-2.0-flash": "gemini-2.5-flash",
+}
+
+GOOGLE_FALLBACK_MODELS = [
+    "gemini-2.5-pro",
+    "gemini-3.8-flash",
+    "gemini-3.7-flash",
+    "gemini-2.5-flash",
+    "gemma-4-26b-a4b-it",
+]
+
+
+def _resolve_google_model(model: str) -> str:
+    """Map legacy/short Google model names to live API model IDs."""
+    cleaned = (model or "").strip()
+    return GOOGLE_MODEL_ALIASES.get(cleaned, cleaned)
+
 def call_ai_engine(system_instruction, user_content, provider, model, google_keys=None, openai_keys=None, is_json=False, temperature=0.0, files=None):
     """
     Hàm gọi LLM đa nền tảng.
@@ -39,6 +61,7 @@ def call_ai_engine(system_instruction, user_content, provider, model, google_key
     # PROVIDER 1: GOOGLE API (Gemini / Gemma)
     # ==========================================
     if provider == "Google API":
+        resolved_model = _resolve_google_model(model)
         safety_settings = [
             types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold=types.HarmBlockThreshold.BLOCK_NONE),
             types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_HARASSMENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
@@ -131,7 +154,7 @@ def call_ai_engine(system_instruction, user_content, provider, model, google_key
                             contents = user_content
                         
                     config = types.GenerateContentConfig(**config_args)
-                    response = client.models.generate_content(model=model, contents=contents, config=config)
+                    response = client.models.generate_content(model=resolved_model, contents=contents, config=config)
                     raw_text = response.text if response.text else "{}"
                     
                     # Post-process cho Gemma: Strip markdown code fences thường xuất hiện trong response
@@ -157,9 +180,8 @@ def call_ai_engine(system_instruction, user_content, provider, model, google_key
                             continue
                     
                     # Tự động kích hoạt chế độ tự phục hồi bằng các mô hình dự phòng cùng nhà cung cấp
-                    # Danh sách các mô hình dự phòng của Google API
-                    fallbacks = ["gemma-4-26b-a4b-it", "gemini-2.5-flash", "gemini-3.1-flash-lite", "gemini-flash-latest"]
-                    fallbacks = [m for m in fallbacks if m != model]
+                    # Danh sách các mô hình dự phòng của Google API (ưu tiên Gemini trước Gemma)
+                    fallbacks = [m for m in GOOGLE_FALLBACK_MODELS if m != resolved_model]
                     
                     for fb_model in fallbacks:
                         try:
@@ -310,6 +332,7 @@ def call_ai_engine_stream(system_instruction, user_content, provider, model, goo
     last_error = None
 
     if provider == "Google API":
+        resolved_model = _resolve_google_model(model)
         safety_settings = [
             types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold=types.HarmBlockThreshold.BLOCK_NONE),
             types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_HARASSMENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
@@ -346,7 +369,7 @@ def call_ai_engine_stream(system_instruction, user_content, provider, model, goo
                         contents = user_content
                         
                     config = types.GenerateContentConfig(**config_args)
-                    response_stream = client.models.generate_content_stream(model=model, contents=contents, config=config)
+                    response_stream = client.models.generate_content_stream(model=resolved_model, contents=contents, config=config)
                     for chunk in response_stream:
                         if chunk.text:
                             yield chunk.text
@@ -359,8 +382,7 @@ def call_ai_engine_stream(system_instruction, user_content, provider, model, goo
                             continue
                     
                     # Fallback logic for streaming
-                    fallbacks = ["gemma-4-26b-a4b-it", "gemini-2.5-flash", "gemini-3.1-flash-lite", "gemini-flash-latest"]
-                    fallbacks = [m for m in fallbacks if m != model]
+                    fallbacks = [m for m in GOOGLE_FALLBACK_MODELS if m != resolved_model]
                     
                     for fb_model in fallbacks:
                         try:
