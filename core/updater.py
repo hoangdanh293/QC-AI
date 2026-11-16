@@ -140,6 +140,42 @@ def _build_headers(token: str = "") -> dict[str, str]:
 #  Local Version Tracking
 # ══════════════════════════════════════════════════════════════════════
 
+def _no_window_flags() -> int:
+    """Return CREATE_NO_WINDOW on Windows so pythonw never flashes a console."""
+    if os.name == "nt":
+        return getattr(subprocess, "CREATE_NO_WINDOW", 0)
+    return 0
+
+
+def _read_git_head_sha(base_dir: str) -> str:
+    """Read current git commit SHA directly from .git files without spawning git.exe."""
+    git_dir = os.path.join(base_dir, ".git")
+    head_path = os.path.join(git_dir, "HEAD")
+    if not os.path.isfile(head_path):
+        return ""
+    try:
+        with open(head_path, "r", encoding="utf-8") as f:
+            head = f.read().strip()
+        if head.startswith("ref: "):
+            ref = head[5:].strip()
+            ref_path = os.path.join(git_dir, *ref.split("/"))
+            if os.path.isfile(ref_path):
+                with open(ref_path, "r", encoding="utf-8") as rf:
+                    return rf.read().strip()
+            packed_path = os.path.join(git_dir, "packed-refs")
+            if os.path.isfile(packed_path):
+                with open(packed_path, "r", encoding="utf-8") as pf:
+                    for line in pf:
+                        if not line.startswith("#") and not line.startswith("^"):
+                            parts = line.strip().split(" ", 1)
+                            if len(parts) == 2 and parts[1] == ref:
+                                return parts[0]
+            return ""
+        return head
+    except Exception:
+        return ""
+
+
 def get_local_version(base_dir: str = BASE_DIR) -> dict:
     path = os.path.join(base_dir, VERSION_FILE)
     if os.path.exists(path):
@@ -151,30 +187,15 @@ def get_local_version(base_dir: str = BASE_DIR) -> dict:
         except Exception:
             pass
 
-    # Fallback: read from .git if available
-    git_dir = os.path.join(base_dir, ".git")
-    if os.path.isdir(git_dir):
-        try:
-            sha = subprocess.check_output(
-                ["git", "-C", base_dir, "rev-parse", "HEAD"],
-                stderr=subprocess.DEVNULL,
-                text=True,
-                timeout=3,
-            ).strip()
-            msg = subprocess.check_output(
-                ["git", "-C", base_dir, "log", "-1", "--pretty=%s"],
-                stderr=subprocess.DEVNULL,
-                text=True,
-                timeout=3,
-            ).strip()
-            return {
-                "commit_sha": sha,
-                "commit_message": msg,
-                "commit_date": "",
-                "updated_at": "",
-            }
-        except Exception:
-            pass
+    # Fallback: read directly from .git files (zero subprocesses, no console flash)
+    sha = _read_git_head_sha(base_dir)
+    if sha:
+        return {
+            "commit_sha": sha,
+            "commit_message": "Đang chạy từ mã nguồn Git",
+            "commit_date": "",
+            "updated_at": "",
+        }
 
     return {
         "commit_sha": "",
@@ -471,6 +492,7 @@ def apply_update_from_archive_bytes(
                 check=False,
                 capture_output=True,
                 text=True,
+                creationflags=_no_window_flags(),
             )
             deps_installed = True
 

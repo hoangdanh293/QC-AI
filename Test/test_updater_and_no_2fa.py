@@ -135,6 +135,19 @@ class TestUpdater(unittest.TestCase):
         self.assertFalse(info["ok"])
         self.assertTrue(info["needs_token"])
 
+    def test_get_local_version_reads_git_head_without_subprocess(self):
+        git_refs = os.path.join(self.root, ".git", "refs", "heads")
+        os.makedirs(git_refs, exist_ok=True)
+        with open(os.path.join(self.root, ".git", "HEAD"), "w", encoding="utf-8") as f:
+            f.write("ref: refs/heads/main\n")
+        with open(os.path.join(git_refs, "main"), "w", encoding="utf-8") as f:
+            f.write("deadbeef1234567890\n")
+
+        with patch("core.updater.subprocess.check_output", side_effect=AssertionError("subprocess should not be called")), \
+             patch("core.updater.subprocess.run", side_effect=AssertionError("subprocess should not be called")):
+            ver = updater.get_local_version(base_dir=self.root)
+        self.assertEqual(ver["commit_sha"], "deadbeef1234567890")
+
 
 if __name__ == "__main__":
     unittest.main()
