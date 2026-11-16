@@ -1,0 +1,26 @@
+# Local secrets & machine-specific configuration
+api_key.json
+drive_token.json
+drive_config.json
+github_token.json
+client_secret_*.json
+
+# Runtime & version state
+app_version.json
+ui_cache.dat
+render_state.dat
+streamlit_run.log
+restart.txt
+shutdown.txt
+
+# Local user style & generated output cache
+personal_style.json
+cache_print/
+scratch/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+desktop.ini

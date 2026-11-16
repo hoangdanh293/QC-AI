@@ -21,10 +21,12 @@ echo Dang tien hanh tai va cai dat cac thu vien can thiet...
 echo Qua trinh nay co the mat 1-2 phut can co ket noi mang.
 echo.
 
-pip install --upgrade pip
-pip install streamlit requests pymupdf docxtpl python-docx google-genai langchain-text-splitters openai easyocr pypdf pdfplumber
-pip install pyotp qrcode[pil] bcrypt cryptography reportlab Pillow
-pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib
+python -m pip install --upgrade pip
+if exist "%~dp0requirements.txt" (
+    python -m pip install -r "%~dp0requirements.txt"
+) else (
+    python -m pip install streamlit requests pymupdf docxtpl python-docx google-genai langchain-text-splitters openai easyocr pypdf pdfplumber bcrypt cryptography Pillow google-api-python-client google-auth-httplib2 google-auth-oauthlib
+)
 
 echo.
 echo =======================================================

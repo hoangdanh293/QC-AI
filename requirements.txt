@@ -1,0 +1,17 @@
+streamlit
+requests
+pymupdf
+docxtpl
+python-docx
+google-genai
+langchain-text-splitters
+openai
+easyocr
+pypdf
+pdfplumber
+bcrypt
+cryptography
+Pillow
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
